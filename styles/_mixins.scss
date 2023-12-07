@@ -1,0 +1,21 @@
+@import './breakpoints';
+
+@mixin media-breakpoint($size) {
+   @if $size == 'screen-sm' {
+    @media only screen and (min-width: #{$screen-sm}) {
+        @content;
+    }
+   } @else if $size == 'screen-md' {
+    @media only screen and (min-width: #{$screen-md}) {
+        @content;
+    }
+   } @else if $size == 'screen-lg' {
+    @media only screen and (min-width: #{$screen-lg}) {
+        @content;
+    }
+   } @else if $size == 'screen-xl' {
+    @media only screen and (min-width: #{$screen-xl}) {
+        @content;
+    }
+   }
+}
