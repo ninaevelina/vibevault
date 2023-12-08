@@ -28,7 +28,26 @@ p, span {
     color: $black;
     font-weight: 500;
 }
+a {
+    color: inherit;
+}
 
 ul {
     list-style-type: none;
+}
+
+.grid-container {
+    display: grid;
+    @include media-breakpoint(screen-sm) {
+        grid-template-columns: 1fr;
+    }
+    @include media-breakpoint(screen-md) {
+        grid-template-columns: 1fr;
+    }
+    @include media-breakpoint(screen-lg) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include media-breakpoint(screen-xl) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
