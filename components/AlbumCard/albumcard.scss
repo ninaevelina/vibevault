@@ -1,0 +1,19 @@
+@import '../../styles/main';
+.album {
+    outline: 1px solid black;
+    @include media-breakpoint(screen-sm) {
+        place-self: center;
+    }
+    @include media-breakpoint(screen-md) {
+        place-self: center;
+    }
+    &__image {
+        outline: 1px solid black;
+
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        outline: 1px solid black;
+    }
+}
