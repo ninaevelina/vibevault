@@ -20,9 +20,5 @@ const getAlbum = cache(async (slug: string) => {
 export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
   const album = await getAlbum(slug);
   console.log(album, "album by slug");
-  return (
-    <div>
-      <img src={album?.imageUrl} />
-    </div>
-  );
+  return <div>{/*<img src={album?.imageUrl} />*/}</div>;
 }
