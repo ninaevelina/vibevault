@@ -7,11 +7,8 @@ export default async function Albums() {
   console.log(albums);
 
   return (
-    <section>
+    <section className="grid-container">
       {albums.map((album) => (
-        /* <article key={album.albumId}>
-          <h2>{album.title}</h2>
-        </article>*/
         <AlbumCard album={album} key={album.id} />
       ))}
     </section>
