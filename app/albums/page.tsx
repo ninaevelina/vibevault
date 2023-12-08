@@ -1,5 +1,6 @@
 import React from "react";
 import prisma from "@/lib/db/prisma";
+import AlbumCard from "@/components/AlbumCard/AlbumCard";
 
 export default async function Albums() {
   const albums = await prisma.album.findMany();
@@ -8,9 +9,10 @@ export default async function Albums() {
   return (
     <section>
       {albums.map((album) => (
-        <article key={album.albumId}>
+        /* <article key={album.albumId}>
           <h2>{album.title}</h2>
-        </article>
+        </article>*/
+        <AlbumCard album={album} key={album.id} />
       ))}
     </section>
   );
