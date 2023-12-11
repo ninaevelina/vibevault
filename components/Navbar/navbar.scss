@@ -1,0 +1,37 @@
+@import '../../styles/main'; 
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid black;
+
+    @include media-breakpoint(screen-md) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    }
+
+    .nav-items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        font-weight: 500;
+        
+
+        &__item {
+            margin-left: 1rem;
+            margin-right: 1rem;
+            &--green {
+                @include primary-button;
+            }
+        }
+        .active {
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+       
+    }
+}
