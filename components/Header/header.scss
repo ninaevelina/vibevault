@@ -1,0 +1,23 @@
+@import '../../styles/main';
+.header-container {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    @include media-breakpoint(screen-md) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    }
+
+    &__logo-container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        height: 80px;
+        outline: 1px solid black;
+        @include media-breakpoint(screen-md) {
+            width: 30vw;
+        }
+    }
+}
