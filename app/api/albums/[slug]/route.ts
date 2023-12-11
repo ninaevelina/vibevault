@@ -10,7 +10,11 @@ export const GET = async (
       where: {
         slug: params.slug,
       },
+      include: {
+        reviews: true,
+      },
     });
+    console.log(album);
     return NextResponse.json(album);
   } catch (error) {
     console.log(error, "could not get album");
