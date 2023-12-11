@@ -12,6 +12,9 @@ export interface AlbumPageProps {
 const getAlbum = cache(async (slug: string) => {
   const album = await prisma.album.findUnique({
     where: { slug },
+    include: {
+      reviews: true,
+    },
   });
   if (!album) console.log("error");
   return album;
