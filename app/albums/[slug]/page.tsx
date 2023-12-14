@@ -5,6 +5,8 @@ import { cache } from "react";
 import "./albumpage.scss";
 import ReviewCard from "@/components/ReviewCard/ReviewCard";
 import ReviewForm from "@/components/ReviewForm/ReviewForm";
+import Image from "next/image";
+import AlbumImage from "@/components/AlbumImage/AlbumImage";
 
 export interface AlbumPageProps {
   params: {
@@ -20,17 +22,19 @@ const getAlbum = cache(async (slug: string) => {
     },
   });
   if (!album) console.log("error");
+  console.log("album", album);
   return album;
 });
 
 export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
   const album = await getAlbum(slug);
   console.log(album, "album by slug");
+
   return (
     <>
       <section className="album-view">
         <div className="album-view__image">
-          {/*<img src={album?.imageUrl} alt={`Photo of ${album?.title}`} />*/}
+          {album && <AlbumImage album={album} />}
         </div>
         <ul className="album-view__details">
           <li className="album-view__details--detail">
