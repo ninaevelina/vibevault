@@ -1,6 +1,7 @@
 @import '../../styles/main';
 .album {
     outline: 1px solid black;
+    
     @include media-breakpoint(screen-sm) {
         place-self: center;
     }
@@ -8,12 +9,15 @@
         place-self: center;
     }
     &__image {
-        outline: 1px solid black;
+        outline: 1px solid red;
 
     }
     &__details {
         display: flex;
         flex-direction: column;
-        outline: 1px solid black;
+        outline: 1px solid green;
+        &--title {
+            font-size: 1.2rem;
+        }
     }
 }

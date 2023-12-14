@@ -1,0 +1,24 @@
+@import '../../styles/main';
+
+.review {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid black;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    width: 150px;
+    @include media-breakpoint(screen-lg) {
+        width: -webkit-fill-available;
+    }
+    @include media-breakpoint(screen-xl) {
+        width: -webkit-fill-available;
+    }
+    
+
+    &__rating {
+        outline: 1px solid green;
+    }
+    &__content {
+        outline: 1px solid red;
+    }
+}
