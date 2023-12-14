@@ -1,0 +1,107 @@
+@import '../../../styles/main';
+
+.album-view {
+    display: grid;
+    border-bottom: 2px solid $black;
+    
+    
+    @include media-breakpoint(screen-sm) {
+        grid-template-columns: 1fr;
+        
+    }
+    @include media-breakpoint(screen-md) {
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+    }
+
+    &__image {
+        outline: 1px solid $black;
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint(screen-sm) {
+            width: calc(100vw - 1rem);
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+        @include media-breakpoint(screen-md) {
+            width: 50vw;
+            padding-top: 0px;
+        }
+        
+    }
+    &__details {
+        outline: 1px solid $black;
+        @include media-breakpoint(screen-sm) {
+            width: calc(100vw - 1rem);
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+        @include media-breakpoint(screen-md) {
+            width: auto;
+        }
+        @include media-breakpoint(screen-lg) {
+          // margin: 0 auto;
+        }
+        &--detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-top: 10px;
+            outline: 1px solid black;
+            font-weight: 500;
+            
+        }
+       
+       
+    }
+}
+
+
+.reviews-container {
+    margin: 0 auto;
+    width: calc(100vw - 1rem);
+    padding-top: 10px;
+    @include media-breakpoint(screen-md) {
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+
+    }
+    h4 {
+       padding-top: 20px;
+       padding-bottom: 40px;
+       @include media-breakpoint(screen-lg) {
+        grid-column: 2;
+        margin: auto;
+        width: calc(100% - 2rem);
+       }
+       @include media-breakpoint(screen-xl) {
+        grid-column: 3;
+        margin: auto;
+        width: calc(100% - 2rem);
+       }
+    }
+
+    .reviews {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include media-breakpoint(screen-lg) {
+            width: calc(100% - 2rem);
+            margin: auto;
+            grid-column: 2;
+        }
+        @include media-breakpoint(screen-xl) {
+            width: calc(100% - 2rem);
+            margin: auto;
+            grid-column: 3;
+        }
+    }
+
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    
+}
