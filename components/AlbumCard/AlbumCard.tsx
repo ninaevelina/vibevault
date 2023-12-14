@@ -23,7 +23,7 @@ export default function AlbumCard({ album }: AlbumCardProps) {
   />*/}
       </div>
       <div className="album__details">
-        <h2>{album.title}</h2>
+        <h2 className="album__details--title">{album.title}</h2>
         <h3>{album.artist}</h3>
         <label>{album.genre}</label>
         <Link href={"/albums/" + album.slug}>View Album</Link>
