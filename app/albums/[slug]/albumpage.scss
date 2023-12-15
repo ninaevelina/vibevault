@@ -5,44 +5,59 @@
     border-bottom: 2px solid $black;
     
     
+    
     @include media-breakpoint(screen-sm) {
         grid-template-columns: 1fr;
         
     }
     @include media-breakpoint(screen-md) {
-        grid-template-columns: 1fr 1fr;
-        width: calc(100% - 2rem);
-        margin: 0 auto;
+        grid-template-columns: 1fr;
+        //width: calc(100% - 2rem);
+        //margin: 0 auto;
+    }
+    @include media-breakpoint(screen-lg) {
+        grid-template-columns: repeat(2,minmax(1em,1fr));
     }
 
     &__image {
         outline: 1px solid $black;
         display: flex;
         flex-direction: column;
+        width: 100%;
         @include media-breakpoint(screen-sm) {
-            width: calc(100vw - 1rem);
+           // width: calc(100vw - 1rem);
             margin: 0 auto;
-            padding-top: 10px;
+            //padding-top: 10px;
         }
         @include media-breakpoint(screen-md) {
-            width: 50vw;
+            //width: 50vw;
             padding-top: 0px;
+        }
+        &--img {
+            @include media-breakpoint(screen-lg) {
+                width: 50vw;
+            }
+            @include media-breakpoint(screen-xl) {
+                width: 50vw;
+            }
         }
         
     }
     &__details {
         outline: 1px solid $black;
         @include media-breakpoint(screen-sm) {
-            width: calc(100vw - 1rem);
-            margin: 0 auto;
-            padding-top: 10px;
+            //width: calc(100vw - 1rem);
+            //margin: 0 auto;
+            //padding-top: 10px;
         }
         @include media-breakpoint(screen-md) {
-            width: auto;
+            //width: auto;
         }
         @include media-breakpoint(screen-lg) {
-          // margin: 0 auto;
+            padding: 10px;
+            width: -webkit-fill-available;
         }
+       
         &--detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -59,43 +74,58 @@
 
 .reviews-container {
     margin: 0 auto;
-    width: calc(100vw - 1rem);
+    //width: calc(100vw - 1rem);
     padding-top: 10px;
     @include media-breakpoint(screen-md) {
-        width: calc(100% - 2rem);
-        margin: 0 auto;
+       // width: calc(100% - 2rem);
+        //margin: 0 auto;
 
     }
     h4 {
-       padding-top: 20px;
-       padding-bottom: 40px;
+       //padding-top: 20px;
+       //padding-bottom: 40px;
+       border-top: 1px solid black;
+       border-bottom: 1px solid black;
+       text-transform: uppercase;
+       font-weight: 500;
+       
        @include media-breakpoint(screen-lg) {
-        grid-column: 2;
-        margin: auto;
-        width: calc(100% - 2rem);
+        //grid-column: 2;
+        //margin: auto;
+        //width: calc(100% - 2rem);
        }
        @include media-breakpoint(screen-xl) {
-        grid-column: 3;
-        margin: auto;
-        width: calc(100% - 2rem);
+        //grid-column: 3;
+        //margin: auto;
+        //width: calc(100% - 2rem);
        }
     }
 
     .reviews {
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         justify-content: space-between;
+        //
+        flex-direction: row;
+        overflow-x: scroll !important;
+        scroll-behavior: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1px;
+        scrollbar-width: 0;
 
         @include media-breakpoint(screen-lg) {
-            width: calc(100% - 2rem);
-            margin: auto;
-            grid-column: 2;
+            //width: calc(100% - 2rem);
+            //margin: auto;
+            //grid-column: 2;
         }
         @include media-breakpoint(screen-xl) {
-            width: calc(100% - 2rem);
-            margin: auto;
-            grid-column: 3;
+            //width: calc(100% - 2rem);
+            //margin: auto;
+            //grid-column: 3;
         }
+    }
+    .reviews::-webkit-scrollbar {
+        display: none;
     }
 
 }
