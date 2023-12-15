@@ -40,10 +40,10 @@ ul {
 .grid-container {
     display: grid;
     @include media-breakpoint(screen-sm) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     @include media-breakpoint(screen-md) {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     @include media-breakpoint(screen-lg) {
         grid-template-columns: 1fr 1fr;
