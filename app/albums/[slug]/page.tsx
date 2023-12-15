@@ -7,6 +7,7 @@ import ReviewCard from "@/components/ReviewCard/ReviewCard";
 import ReviewForm from "@/components/ReviewForm/ReviewForm";
 import Image from "next/image";
 import AlbumImage from "@/components/AlbumImage/AlbumImage";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 export interface AlbumPageProps {
   params: {
@@ -32,6 +33,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
 
   return (
     <>
+      {album && <Breadcrumb album={album} />}
       <section className="album-view">
         <div className="album-view__image">
           {album && <AlbumImage album={album} />}
@@ -51,7 +53,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
           </li>
         </ul>
       </section>
-      <section className="grid-container reviews-container">
+      <section className="reviews-container">
         <h4>Reviews</h4>
         <div className="reviews">
           {album?.reviews.map((review, i) => {

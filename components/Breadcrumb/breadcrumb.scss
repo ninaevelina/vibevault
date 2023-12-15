@@ -1,0 +1,37 @@
+@import '../../styles/main';
+
+
+.secondary-nav {
+    padding: 10px;
+
+    .nav-items {
+        display: flex;
+        padding-right: 5px;
+
+        &__item:nth-of-type(2) {
+            margin-left: 10px;
+
+        }
+
+        &__item {
+            text-transform: uppercase;
+
+            &--albums-link::after {
+                content: ">";
+                margin-left: 5px;
+                width: 1px;
+                height: 1px;
+                padding: 4px;
+                
+                //color: $black;
+
+
+            }
+
+            .active {
+                font-weight: 600;
+                text-decoration: underline;
+            }
+        }
+    }
+}
