@@ -13,6 +13,8 @@ export default function AlbumImage({ album }: AlbumImageProps) {
       width={400}
       alt={`Image of ${album.title}`}
       priority={true}
+      style={{ width: "100%", maxWidth: "100%", height: "100%" }}
+      className="album-view__image--img"
     />
   );
 }
