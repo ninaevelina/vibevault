@@ -1,7 +1,6 @@
 "use client";
 
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Album } from "@prisma/client";
 import { useSearchParams } from "next/navigation";
 import { getAllAlbums } from "@/actions/albumActions";
@@ -9,7 +8,7 @@ import AlbumCard from "../AlbumCard/AlbumCard";
 
 export const AlbumsFilter = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
-  const [genre, setGenre] = useState("All Albums");
+  const [genre, setGenre] = useState<string>("All Albums");
 
   useEffect(() => {
     const getAlbumData = async () => {
@@ -19,22 +18,20 @@ export const AlbumsFilter = () => {
     getAlbumData();
   }, []);
 
-  let filteredAlbums = albums.filter((album) => album.genre === genre);
-  if (genre === "All Albums") {
-    filteredAlbums = albums;
-  }
+  const filteredAlbums =
+    genre === "All Albums"
+      ? albums
+      : albums.filter((album) => album.genre === genre);
 
   const searchParams = useSearchParams();
 
   const handleClick = (genre: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
-    if (genre) {
-      params.set("query", genre);
-      setGenre(genre);
-      if (genre === "All Albums") {
-        setAlbums(albums);
-      }
+    params.set("query", genre);
+    setGenre(genre);
+    if (genre === "All Albums") {
+      setAlbums(albums);
     } else {
       params.delete("query");
     }
@@ -55,7 +52,7 @@ export const AlbumsFilter = () => {
         {genres.map((genre) => (
           <button
             key={genre}
-            onClick={(e) => handleClick(genre)}
+            onClick={() => handleClick(genre)}
             className="button-secondary"
           >
             {genre}
