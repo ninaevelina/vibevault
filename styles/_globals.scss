@@ -52,3 +52,15 @@ ul {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
+.container-small {
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.button-secondary {
+    @include secondary-button;
+}
+
+
