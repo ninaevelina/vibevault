@@ -11,11 +11,11 @@ export default async function Albums() {
   return (
     <>
       <AlbumsFilter />
-      <section className="grid-container">
+      {/*<section className="grid-container">
         {albums.map((album) => (
           <AlbumCard album={album} key={album.id} />
         ))}
-      </section>
+        </section>*/}
     </>
   );
 }
