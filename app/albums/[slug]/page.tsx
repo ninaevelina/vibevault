@@ -1,11 +1,10 @@
-import AlbumCard from "@/components/AlbumCard/AlbumCard";
 import prisma from "@/lib/db/prisma";
-import { Album } from "@prisma/client";
+
 import { cache } from "react";
 import "./albumpage.scss";
 import ReviewCard from "@/components/ReviewCard/ReviewCard";
 import ReviewForm from "@/components/ReviewForm/ReviewForm";
-import Image from "next/image";
+
 import AlbumImage from "@/components/AlbumImage/AlbumImage";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
@@ -53,6 +52,12 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
           </li>
         </ul>
       </section>
+      <section className="form-container">
+        {/* TODO: REFACTOR THIS BLOCK */}
+        <h5>Have you got an opinion about the album?</h5>
+        <h6>Share them!</h6>
+        <ReviewForm slug={slug} albumId={album?.id} />
+      </section>
       <section className="reviews-container">
         <h4>Reviews</h4>
         <div className="reviews">
@@ -60,11 +65,6 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
             return <ReviewCard key={i} review={review} />;
           })}
         </div>
-      </section>
-      <section className="form-container">
-        <h5>Have you got an opinion about the album?</h5>
-        <h6>Share them!</h6>
-        <ReviewForm slug={slug} albumId={album?.id} />
       </section>
     </>
   );
