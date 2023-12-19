@@ -1,10 +1,14 @@
-"use client";
+/*"use client";
 
 import React, { useEffect, useState } from "react";
 import { Album } from "@prisma/client";
 import { useSearchParams } from "next/navigation";
 import { getAllAlbums } from "@/actions/albumActions";
 import AlbumCard from "../AlbumCard/AlbumCard";
+
+interface FilterProps {
+  albums: Album[];
+}
 
 export const AlbumsFilter = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -32,6 +36,7 @@ export const AlbumsFilter = () => {
     setGenre(genre);
     if (genre === "All Albums") {
       setAlbums(albums);
+      setGenre(genre);
     } else {
       params.delete("query");
     }
@@ -68,4 +73,4 @@ export const AlbumsFilter = () => {
       </section>
     </>
   );
-};
+};*/
