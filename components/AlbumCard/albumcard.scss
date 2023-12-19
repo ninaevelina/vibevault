@@ -3,10 +3,10 @@
     outline: 1px solid black;
     
     @include media-breakpoint(screen-sm) {
-        place-self: center;
+       
     }
     @include media-breakpoint(screen-md) {
-        place-self: center;
+       
     }
     &__image {
         outline: 1px solid red;
@@ -16,8 +16,32 @@
         display: flex;
         flex-direction: column;
         outline: 1px solid green;
+        padding: 10px;
+        height: 120px;
+       
         &--title {
-            font-size: 1.2rem;
+            @include media-breakpoint(screen-sm) {
+                height: 40px;
+                font-size: 0.8rem;
+            }
+            @include media-breakpoint(screen-md) {
+                height: 16px;
+                font-size: 1rem;
+                line-height: 1rem;
+            }
+            
+        }
+        &--label {
+            border-radius: 8px;
+            border: 1px solid $black;
+            width: fit-content;
+            padding: 3px 4px 3px 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+
+        }
+        &--link {
+            text-decoration: underline;
         }
     }
 }

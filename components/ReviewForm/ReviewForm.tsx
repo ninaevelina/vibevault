@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import "./reviewform.scss";
+import { useRouter } from "next/navigation";
 
 interface ReviewFormProps {
   albumId?: string;
@@ -11,6 +12,7 @@ interface ReviewFormProps {
 export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
   const [rating, setRating] = useState("");
   const [content, setContent] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +38,7 @@ export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
 
         setRating("");
         setContent("");
+        router.refresh();
       } else {
         console.log("Could not create review");
       }

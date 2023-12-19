@@ -11,22 +11,21 @@ export default function AlbumCard({ album }: AlbumCardProps) {
   return (
     <article className="album">
       <div className="album__image">
-        {/* <img
-          src={album.imageUrl}
-          alt={`Photo of ${album.title} by ${album.artist}`}
-        /> */}
-        {/*<Image
+        <Image
           src={album.imageUrl}
           height={600}
           width={600}
           alt={`Image of ${album.title}`}
-  />*/}
+          style={{ width: "100%", maxWidth: "100%", height: "100%" }}
+        />
       </div>
       <div className="album__details">
         <h2 className="album__details--title">{album.title}</h2>
         <h3>{album.artist}</h3>
-        <label>{album.genre}</label>
-        <Link href={"/albums/" + album.slug}>View Album</Link>
+        <label className="album__details--label">{album.genre}</label>
+        <Link href={"/albums/" + album.slug} className="album__details--link">
+          View Album
+        </Link>
       </div>
     </article>
   );
