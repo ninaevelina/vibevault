@@ -111,7 +111,7 @@
         scroll-behavior: auto;
         scroll-snap-type: x mandatory;
         gap: 1px;
-        scrollbar-width: 0;
+        scrollbar-width: none;
 
         @include media-breakpoint(screen-lg) {
             //width: calc(100% - 2rem);
