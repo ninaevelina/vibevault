@@ -1,5 +1,5 @@
 export const albums = [
-  {
+  /*{
     albumId: "1",
     slug: "dont-get-too-close",
     title: "Don't Get Too Close",
@@ -46,7 +46,7 @@ export const albums = [
   {
     albumId: "5",
     slug: "actual-life-3",
-    title: "Actual Life 3 (January 1 - September 0 2022)",
+    title: "Actual Life 3 (January 1 - September 9 2022)",
     artist: "Fred again..",
     genre: "Electronic",
     year: "2022",
@@ -107,6 +107,72 @@ export const albums = [
     year: "2023",
     imageUrl:
       "https://t2.genius.com/unsafe/600x0/https%3A%2F%2Fimages.genius.com%2F8eb4f76ab9d1b3325c43866a9289bcc4.1000x1000x1.jpg",
+    reviews: [],
+  },*/
+  {
+    albumId: "11",
+    slug: "quest-for-fire",
+    title: "Quest For Fire",
+    artist: "Skrillex",
+    genre: "Dubstep",
+    year: "2023",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F1bb637e7316b9984edfeb5ad1713b924.1000x1000x1.png",
+    reviews: [],
+  },
+  {
+    albumId: "12",
+    slug: "bad-girls",
+    title: "Bad Girls",
+    artist: "Donna Summer",
+    genre: "Pop",
+    year: "1979",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F1457e5964ea0ef299b9560fe338f250a.1000x1000x1.jpg",
+    reviews: [],
+  },
+  {
+    albumId: "13",
+    slug: "discovery",
+    title: "Discovery",
+    artist: "Daft Punk",
+    genre: "Electronic",
+    year: "2001",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2F0fd1fa43fe4a655bde7d7938964914c0.1000x1000x1.png",
+    reviews: [],
+  },
+  {
+    albumId: "14",
+    slug: "homework",
+    title: "Homework",
+    artist: "Daft Punk",
+    genre: "Electronic",
+    year: "1997",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fb2616c1dbb29077082e1d6b9129fddf5.1000x1000x1.png",
+    reviews: [],
+  },
+  {
+    albumId: "15",
+    slug: "like-clockwork",
+    title: "...Like Clockwork",
+    artist: "Queens of The Stone Age",
+    genre: "Rock",
+    year: "2013",
+    imageUrl:
+      "https://t2.genius.com/unsafe/808x0/https%3A%2F%2Fimages.genius.com%2Fff749c1e2a636f6026b7b5456629e200.1000x1000x1.jpg",
+    reviews: [],
+  },
+  {
+    albumId: "16",
+    slug: "songs-for-the-deaf",
+    title: "Songs for the Deaf",
+    artist: "Queens of The Stone Age",
+    genre: "Rock",
+    year: "2002",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fecf21b0f01ff90d0d8e3a4d07139f6ca.1000x1000x1.png",
     reviews: [],
   },
 ];
