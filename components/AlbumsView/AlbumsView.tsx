@@ -36,6 +36,15 @@ export const AlbumsView = () => {
 
   return (
     <>
+      <section className="container-small">
+        <h1>Albums</h1>
+        <div>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+          doloribus porro praesentium et ab consectetur doloremque impedit
+          molestias, suscipit repellendus deserunt at esse cumque ex? Nostrum
+          soluta natus aperiam aliquid?
+        </div>
+      </section>
       <Search searchValue={searchValue} handleSearch={handleSearch} />
       <Filter albums={albums} genre={genre} onGenreChange={handleGenreChoice} />
       <section className="grid-container">
