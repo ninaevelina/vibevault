@@ -11,12 +11,16 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    scrollbar-width: none;
 }
 
 body {
     color: $black;
     background-color: $white;
     font-family: 'Inter', sans-serif;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,11 +60,9 @@ ul {
 .container-small {
     width: calc(100% - 2rem);
     margin: 0 auto;
-    padding: 50px;
+    padding: 25px;
 }
 
 .button-secondary {
     @include secondary-button;
 }
-
-

@@ -14,11 +14,13 @@ interface FilterProps {
 
 export const Filter = ({ albums, genre, onGenreChange }: FilterProps) => {
   const searchParams = useSearchParams();
+  const [activeGenre, setActiveGenre] = useState<string>("All Albums");
 
   useEffect(() => {
     const query = searchParams.get("query");
     if (query) {
       onGenreChange(query);
+      setActiveGenre(query);
     }
   }, [searchParams, onGenreChange]);
 
@@ -37,8 +39,15 @@ export const Filter = ({ albums, genre, onGenreChange }: FilterProps) => {
         {genres.map((genre) => (
           <button
             key={genre}
-            onClick={() => onGenreChange(genre)}
-            className="button-secondary"
+            onClick={() => {
+              onGenreChange(genre);
+              setActiveGenre(genre);
+            }}
+            className={
+              activeGenre === genre
+                ? "button-secondary active"
+                : "button-secondary"
+            }
           >
             {genre}
           </button>
