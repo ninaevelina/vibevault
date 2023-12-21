@@ -66,3 +66,7 @@ ul {
 .button-secondary {
     @include secondary-button;
 }
+
+.button-tertiary {
+    @include tertiary-button;
+}

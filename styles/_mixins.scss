@@ -56,3 +56,19 @@
         background-color: $lemon;
     }
 }
+
+@mixin tertiary-button {
+    width: max-content;
+    background-color: $black;
+    outline: none;
+    color: $white;
+    border: 2px solid $black;
+    font-weight: 600;
+    padding: 6px 10px 6px 10px;
+    text-transform: uppercase;
+
+    &:hover {
+        cursor: pointer;
+        
+    }
+}
