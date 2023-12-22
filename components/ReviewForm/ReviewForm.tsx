@@ -72,7 +72,7 @@ export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
             {!isSubmitted && (
               <form onSubmit={handleSubmit} className="review-form">
                 <div className="form-header">
-                  <span>Review form header</span>
+                  <h1>Let&apos;s hear your thoughts</h1>
                 </div>
                 <label className="rating">
                   <span className="rating__label-description">Rating</span>
