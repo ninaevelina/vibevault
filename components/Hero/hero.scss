@@ -1,0 +1,40 @@
+@import "../../styles/main";
+
+.hero-section {
+    &__logo-container {
+        position: relative;
+        height: 260px;
+        outline: 1px solid red;
+        
+
+        &--logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            //font-size: 12rem;
+            font-size: clamp(3.18rem, -4.1395rem + 24.186vw, 12rem);
+            letter-spacing: 0.1rem;
+        }
+
+        &--description {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(0.6rem, 0.0465rem + 2.6047vw, 2rem);
+            //display: flex;
+            text-wrap: nowrap;
+            text-transform: uppercase;
+            
+        }
+        
+    }
+
+    &__bottom-container {
+        outline: 1px solid black;
+        height: 60px;
+    }
+
+}
+
