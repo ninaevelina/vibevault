@@ -12,12 +12,15 @@ export const AlbumsView = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [genre, setGenre] = useState<string>("All Albums");
   const [searchValue, setSearchValue] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const albumData = await getAllAlbums();
       setAlbums(albumData);
+      setIsLoading(false);
     };
     getData();
   }, []);
@@ -50,16 +53,18 @@ export const AlbumsView = () => {
       <Search searchValue={searchValue} handleSearch={handleSearch} />
       <Filter albums={albums} genre={genre} onGenreChange={handleGenreChoice} />
       <section className="grid-container">
-        {albums
-          .filter(
-            (album) =>
-              album.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-              album.artist.toLowerCase().includes(searchValue.toLowerCase())
-          )
-          .filter((album) => genre === "All Albums" || album.genre === genre)
-          .map((album) => (
-            <AlbumCard album={album} key={album.albumId} />
-          ))}
+        {isLoading ? (
+          <p>Loading</p>
+        ) : (
+          albums
+            .filter(
+              (album) =>
+                album.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+                album.artist.toLowerCase().includes(searchValue.toLowerCase())
+            )
+            .filter((album) => genre === "All Albums" || album.genre === genre)
+            .map((album) => <AlbumCard album={album} key={album.albumId} />)
+        )}
       </section>
     </>
   );
