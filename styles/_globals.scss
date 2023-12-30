@@ -63,6 +63,25 @@ ul {
     padding: 25px;
 }
 
+.text-container {
+    width: calc(100% - 2rem);
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.redirect {
+    &__link-text {
+        text-decoration: underline;  
+    }
+}
+
 .button-secondary {
     @include secondary-button;
 }
