@@ -38,11 +38,13 @@ export const AlbumsView = () => {
     <>
       <section className="container-small">
         <h1>Albums</h1>
-        <div>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          doloribus porro praesentium et ab consectetur doloremque impedit
-          molestias, suscipit repellendus deserunt at esse cumque ex? Nostrum
-          soluta natus aperiam aliquid?
+        <div className="text-container">
+          <p>
+            {" "}
+            No need for a GPS through genres. Dive into hip-hop, rock, jazz, or
+            whatever catches your ear. <br></br>
+            Navigate effortlessly, and find an album that suits your vibe.
+          </p>
         </div>
       </section>
       <Search searchValue={searchValue} handleSearch={handleSearch} />
