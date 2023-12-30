@@ -57,8 +57,9 @@ export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
           setIsOpen(true);
           setIsSubmitted(false);
         }}
+        className="button-tertiary"
       >
-        Open form modal
+        ADD REVIEW
       </button>
       <div className={isOpen ? "modal-container-blur" : "modal-container"}>
         {isOpen && (
