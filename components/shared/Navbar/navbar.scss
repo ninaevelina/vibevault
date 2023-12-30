@@ -17,12 +17,12 @@
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        font-weight: 500;
-        
+        font-weight: 500;      
 
         &__item {
             margin-left: 1rem;
             margin-right: 1rem;
+            line-height: 2;
             &--green {
                 @include primary-button;
             }
