@@ -18,6 +18,20 @@ footer {
         }
 
         &__column {
+
+            &--logo-container {
+                background-image: url('../../../public/vvlogo-f.svg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                height: 120px;
+                width: 120px;
+                background-position: 50%;
+                @include media-breakpoint(screen-md) {
+                    width: 200px;
+                    background-position: 5% 20%;
+                }
+                
+            }
             li, a {
                 font-weight: 500;
                 line-height: 2;

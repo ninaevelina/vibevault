@@ -4,7 +4,9 @@ export const Footer = () => {
   return (
     <footer>
       <div className="columns">
-        <div className="columns__column">Vibevault logo</div>
+        <div className="columns__column">
+          <div className="columns__column--logo-container"></div>
+        </div>
         <div className="columns__column">
           <ul>
             <li>
