@@ -7,6 +7,7 @@ import { Search } from "../Search/Search";
 import { Filter } from "../Filter/Filter";
 import { useSearchParams } from "next/navigation";
 import AlbumCard from "../AlbumCard/AlbumCard";
+import { Loader } from "../shared/Loader/Loader";
 
 export const AlbumsView = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -54,7 +55,7 @@ export const AlbumsView = () => {
       <Filter albums={albums} genre={genre} onGenreChange={handleGenreChoice} />
       <section className="grid-container">
         {isLoading ? (
-          <p>Loading</p>
+          <Loader />
         ) : (
           albums
             .filter(
