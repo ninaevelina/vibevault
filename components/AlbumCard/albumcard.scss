@@ -17,11 +17,14 @@
         flex-direction: column;
         outline: 1px solid green;
         padding: 10px;
-        height: 120px;
+        height: 140px;
+        justify-content: space-between;
+        
        
         &--title {
+            font-weight: 500;
             @include media-breakpoint(screen-sm) {
-                height: 40px;
+                //height: 40px;
                 font-size: 0.8rem;
             }
             @include media-breakpoint(screen-md) {
@@ -31,12 +34,18 @@
             }
             
         }
+        &--artist {
+            font-size: 0.8rem;
+        }
         &--label {
             border-radius: 8px;
             border: 1px solid $black;
+            background-color: $black;
+            color: $white;
             width: fit-content;
             padding: 3px 4px 3px 4px;
             font-weight: 500;
+            font-size: 0.8rem;
             text-transform: uppercase;
 
         }
