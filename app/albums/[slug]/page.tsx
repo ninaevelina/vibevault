@@ -30,7 +30,25 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
   const album = await getAlbum(slug);
   console.log(album, "album by slug");
   const reviews = album?.reviews;
-  console.log(reviews);
+  console.log("reviews", reviews);
+
+  const getAverageRating = () => {
+    const reviews = album?.reviews;
+    if (reviews && reviews?.length > 0) {
+      const ratings = reviews?.map((review) => review.rating);
+      const formattedRatings = ratings?.map((rating) => Number(rating));
+      const sumRatings = formattedRatings?.reduce(
+        (accumulator, currentValue) => {
+          return accumulator + currentValue;
+        },
+        0
+      );
+      const averageRating = sumRatings / formattedRatings?.length;
+      const roundedAverageRating = averageRating.toFixed(1);
+
+      return roundedAverageRating;
+    }
+  };
 
   return (
     <>
@@ -39,24 +57,28 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
         <div className="album-view__image">
           {album && <AlbumImage album={album} />}
         </div>
-        <ul className="album-view__details">
-          <li className="album-view__details--detail">
-            <b>Title</b>
-            <span>{album?.title}</span>
-          </li>
-          <li className="album-view__details--detail">
-            <b>Artist</b>
-            <span>{album?.artist}</span>
-          </li>
-          <li className="album-view__details--detail">
-            <b>Release year</b>
-            <span>{album?.year}</span>
-          </li>
-          <li className="album-view__details--detail">
-            <b>Rating</b>
-            <span></span> {/*TODO: ADD FN FOR CALC RATING */}
-          </li>
-        </ul>
+        <div className="container-large">
+          <h1>{album?.title}</h1>
+          <h2>{album?.artist}</h2>
+          <ul className="album-view__details">
+            <li className="album-view__details--detail">
+              <b>Title</b>
+              <span>{album?.title}</span>
+            </li>
+            <li className="album-view__details--detail">
+              <b>Artist</b>
+              <span>{album?.artist}</span>
+            </li>
+            <li className="album-view__details--detail">
+              <b>Release year</b>
+              <span>{album?.year}</span>
+            </li>
+            <li className="album-view__details--detail">
+              <b>Rating</b>
+              <span>{getAverageRating()}</span>{" "}
+            </li>
+          </ul>
+        </div>
       </section>
       <section className="form-container container-small">
         {/* TODO: REFACTOR THIS BLOCK */}
