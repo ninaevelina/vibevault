@@ -50,6 +50,25 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
     }
   };
 
+  const renderReviews = () => {
+    const reviews = album?.reviews;
+    if (reviews && reviews.length > 0) {
+      return (
+        <>
+          {album?.reviews.map((review, i) => {
+            return <ReviewCard key={i} review={review} />;
+          })}
+        </>
+      );
+    } else {
+      return (
+        <div className="text-container">
+          <p>No reviews yet</p>
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       {album && <Breadcrumb album={album} />}
@@ -92,11 +111,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
       </section>
       <section className="reviews-container">
         <h4>Reviews</h4>
-        <div className="reviews">
-          {album?.reviews.map((review, i) => {
-            return <ReviewCard key={i} review={review} />;
-          })}
-        </div>
+        <div className="reviews">{renderReviews()}</div>
       </section>
     </>
   );
