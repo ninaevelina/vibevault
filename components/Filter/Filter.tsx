@@ -55,9 +55,6 @@ export const Filter = ({ albums, genre, onGenreChange }: FilterProps) => {
             {genre}
           </button>
         ))}
-        <div className="text-container">
-          <p>{genre}</p>
-        </div>
       </section>
     </>
   );

@@ -40,8 +40,9 @@ export const AlbumsView = () => {
 
   return (
     <>
+      <Search searchValue={searchValue} handleSearch={handleSearch} />
       <section className="container-small">
-        <h1>Albums</h1>
+        <h1>{genre}</h1>
         <div className="text-container">
           <p>
             {" "}
@@ -51,7 +52,7 @@ export const AlbumsView = () => {
           </p>
         </div>
       </section>
-      <Search searchValue={searchValue} handleSearch={handleSearch} />
+
       <Filter albums={albums} genre={genre} onGenreChange={handleGenreChoice} />
       <section className="grid-container">
         {isLoading ? (
