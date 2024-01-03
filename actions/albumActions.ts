@@ -1,10 +1,6 @@
-import prisma from "@/lib/db/prisma";
-import { Album, Review } from "@prisma/client";
+import { Album } from "@prisma/client";
 import { cache } from "react";
-
-interface AlbumWithReviews extends Album {
-  reviews: Review[];
-}
+import { AlbumWithReviews } from "@/types/album";
 
 const baseUrl =
   "http://localhost:3000/api" ||
