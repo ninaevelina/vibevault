@@ -20,8 +20,8 @@ export const getAllAlbums = async (): Promise<Album[]> => {
 export const getAlbumBySlug = cache(
   async (slug: string): Promise<AlbumWithReviews> => {
     const response = await fetch(`${baseUrl}/albums/${slug}`);
-    const album = (await response.json()) as AlbumWithReviews;
-    console.log(album);
-    return album;
+    const data = (await response.json()) as AlbumWithReviews;
+    console.log(data);
+    return data;
   }
 );
