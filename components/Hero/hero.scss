@@ -3,9 +3,7 @@
 .hero-section {
     &__logo-container {
         position: relative;
-        height: 260px;
-        outline: 1px solid red;
-        
+        height: 260px; 
 
         &--logo {
             position: absolute;
@@ -17,23 +15,6 @@
             letter-spacing: 0.1rem;
         }
 
-        &--description {
-            position: absolute;
-            top: 90%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: clamp(0.6rem, 0.0465rem + 2.6047vw, 2rem);
-            //display: flex;
-            text-wrap: nowrap;
-            text-transform: uppercase;
-            
-        }
-        
-    }
-
-    &__bottom-container {
-        outline: 1px solid black;
-        height: 60px;
     }
 
 }
