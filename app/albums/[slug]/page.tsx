@@ -14,26 +14,14 @@ export interface AlbumPageProps {
   };
 }
 
-const getAlbum = cache(async (slug: string) => {
-  const album = await prisma.album.findUnique({
-    where: { slug },
-    include: {
-      reviews: true,
-    },
-  });
-  if (!album) console.log("error");
-  console.log("album", album);
-  return album;
-});
-
 export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
-  const album = await getAlbum(slug);
+  const album = await getAlbumBySlug(slug);
   console.log(album, "album by slug");
-  const reviews = album?.reviews;
+  const reviews = album.reviews;
   console.log("reviews", reviews);
 
   const getAverageRating = () => {
-    const reviews = album?.reviews;
+    const reviews = album.reviews;
     if (reviews && reviews?.length > 0) {
       const ratings = reviews?.map((review) => review.rating);
       const formattedRatings = ratings?.map((rating) => Number(rating));
@@ -51,7 +39,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
   };
 
   const renderReviews = () => {
-    const reviews = album?.reviews;
+    const reviews = album.reviews;
     if (reviews && reviews.length > 0) {
       return (
         <>
