@@ -52,9 +52,8 @@ export const AlbumsView = () => {
   return (
     <>
       <section className="small-container">
-        <div>
-          <BreadcrumbMenu items={breadcrumbItems} />
-        </div>
+        <BreadcrumbMenu items={breadcrumbItems} />
+
         <Search searchValue={searchValue} handleSearch={handleSearch} />
       </section>
       <section className="flex-center">
