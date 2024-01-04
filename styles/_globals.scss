@@ -60,6 +60,8 @@ ul {
 .container-large {
     display: flex;
     flex-direction: column;
+    width: calc(100% - 1rem);
+    margin: 0 auto;
 
     @include media-breakpoint(screen-lg) {
         width: calc(100% - 1rem);
@@ -72,7 +74,7 @@ ul {
     margin: 8px 0;
 }
 .container-large > *:first-child {
-    margin-top: 0px;
+    margin-top: 10px 0;
 }
 
 .container-small {
@@ -92,6 +94,22 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.small-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
 .redirect {
