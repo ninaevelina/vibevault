@@ -7,6 +7,8 @@ import ReviewForm from "@/components/ReviewForm/ReviewForm";
 import { getAlbumBySlug } from "@/actions/albumActions";
 import AlbumImage from "@/components/AlbumImage/AlbumImage";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Accordion from "@/components/Accordion/Accordion";
+import { BreadcrumbMenu } from "@/components/BreadcrumbMenu/BreadcrumbMenu";
 
 export interface AlbumPageProps {
   params: {
@@ -19,8 +21,22 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
   console.log(album, "album by slug");
   const reviews = album.reviews;
   console.log("reviews", reviews);
+  const breadcrumbItems = [
+    {
+      label: "Home",
+      link: "/",
+    },
+    {
+      label: "Albums",
+      link: "/albums",
+    },
+    {
+      label: album.title,
+      link: `/albums/${album.slug}`,
+    },
+  ];
 
-  const getAverageRating = () => {
+  const getAverageRating = (): string | undefined => {
     const reviews = album.reviews;
     if (reviews && reviews?.length > 0) {
       const ratings = reviews?.map((review) => review.rating);
@@ -36,6 +52,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
 
       return roundedAverageRating;
     }
+    return undefined;
   };
 
   const renderReviews = () => {
@@ -59,14 +76,29 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
 
   return (
     <>
-      {album && <Breadcrumb album={album} />}
+      {album && <BreadcrumbMenu items={breadcrumbItems} />}
       <section className="album-view">
         <div className="album-view__image">
           {album && <AlbumImage album={album} />}
         </div>
+        {/*<div className="test">
+          <Accordion title={"Title"} content={album.title} />
+          <Accordion title={"Artist"} content={album.artist} />
+          <Accordion title={"Release year"} content={album.year} />
+          <Accordion
+            title={"Rating"}
+            content={getAverageRating()?.toString() ?? "No rating"}
+          />
+  </div>*/}
         <div className="container-large">
-          <h1>{album?.title}</h1>
-          <h2>{album?.artist}</h2>
+          <div className="small-container">
+            <div>
+              <h1>{album?.title}</h1>
+              <h2>{album?.artist}</h2>
+            </div>
+            <div>{album.genre}</div>
+          </div>
+
           <ul className="album-view__details">
             <li className="album-view__details--detail">
               <b>Title</b>
@@ -85,16 +117,14 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
               <span>{getAverageRating()}</span>{" "}
             </li>
           </ul>
-        </div>
-      </section>
-      <section className="form-container container-small">
-        {/* TODO: REFACTOR THIS BLOCK */}
-        <div className="text-container">
-          <h4>Have you got an opinion about the album?</h4>
-          <p>Let&apos;s hear your thoughts!</p>
-        </div>
-        <div className="text-container">
-          <ReviewForm slug={slug} albumId={album?.id} />
+          <div className="small-container">
+            <div>
+              <span>{reviews.length + " " + "reviews"}</span>
+            </div>
+            <div>
+              <ReviewForm slug={slug} albumId={album?.id} />
+            </div>
+          </div>
         </div>
       </section>
       <section className="reviews-container">

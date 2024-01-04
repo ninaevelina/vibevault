@@ -8,6 +8,7 @@ import { Filter } from "../Filter/Filter";
 import { useSearchParams } from "next/navigation";
 import AlbumCard from "../AlbumCard/AlbumCard";
 import { Loader } from "../shared/Loader/Loader";
+import { BreadcrumbMenu } from "../BreadcrumbMenu/BreadcrumbMenu";
 
 export const AlbumsView = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -15,6 +16,16 @@ export const AlbumsView = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const searchParams = useSearchParams();
+  const breadcrumbItems = [
+    {
+      label: "Home",
+      link: "/",
+    },
+    {
+      label: "Albums",
+      link: "/albums",
+    },
+  ];
 
   useEffect(() => {
     const getData = async () => {
@@ -40,20 +51,29 @@ export const AlbumsView = () => {
 
   return (
     <>
-      <Search searchValue={searchValue} handleSearch={handleSearch} />
-      <section className="container-small">
-        <h1>{genre}</h1>
-        <div className="text-container">
-          <p>
-            {" "}
-            No need for a GPS through genres. Dive into hip-hop, rock, jazz, or
-            whatever catches your ear. <br></br>
-            Navigate effortlessly, and find an album that suits your vibe.
-          </p>
+      <section className="small-container">
+        <div>
+          <BreadcrumbMenu items={breadcrumbItems} />
         </div>
+        <Search searchValue={searchValue} handleSearch={handleSearch} />
       </section>
+      <section className="flex-center">
+        <h1>{genre}</h1>
+        <Filter
+          albums={albums}
+          genre={genre}
+          onGenreChange={handleGenreChoice}
+        />
+      </section>
+      {/*  <section className="grid-container">
+        <Filter
+          albums={albums}
+          genre={genre}
+          onGenreChange={handleGenreChoice}
+        />
+        <Search searchValue={searchValue} handleSearch={handleSearch} />
+      </section> */}
 
-      <Filter albums={albums} genre={genre} onGenreChange={handleGenreChoice} />
       <section className="grid-container">
         {isLoading ? (
           <Loader />

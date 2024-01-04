@@ -1,10 +1,25 @@
+import { BreadcrumbMenu } from "@/components/BreadcrumbMenu/BreadcrumbMenu";
+
 export default function ContactPage() {
+  const breadcrumbItems = [
+    {
+      label: "Home",
+      link: "/",
+    },
+    {
+      label: "Contact",
+      link: "/contact",
+    },
+  ];
   return (
-    <section className="container-small">
-      <h1>Contact</h1>
-      <div className="text-container">
-        <p>Lorem ipsum</p>
-      </div>
-    </section>
+    <>
+      <BreadcrumbMenu items={breadcrumbItems} />
+      <section className="container-small">
+        <h1>Contact</h1>
+        <div className="text-container">
+          <p>Lorem ipsum</p>
+        </div>
+      </section>
+    </>
   );
 }
