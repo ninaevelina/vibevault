@@ -9,16 +9,14 @@ interface SearchProps {
 
 export const Search = ({ searchValue, handleSearch }: SearchProps) => {
   return (
-    <section className="container-small">
-      <div className="search-container">
-        <input
-          type="text"
-          value={searchValue}
-          placeholder="Search by title or artist"
-          onChange={(e) => handleSearch(e.target.value)}
-          className="search-container__searchfield"
-        />
-      </div>
-    </section>
+    <div className="search-container">
+      <input
+        type="text"
+        value={searchValue}
+        placeholder="Search by title or artist"
+        onChange={(e) => handleSearch(e.target.value)}
+        className="search-container__searchfield"
+      />
+    </div>
   );
 };
