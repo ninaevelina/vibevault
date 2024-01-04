@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import "./breadcrumb.scss";
 
 interface BreadcrumbItem {
   label: string;
@@ -12,7 +13,7 @@ interface BreadcrumbItemsProps {
 
 export const BreadcrumbMenu = ({ items }: BreadcrumbItemsProps) => {
   return (
-    <div>
+    <div className="breadcrumbs-container">
       <nav className="secondary-nav">
         <ul className="nav-items">
           {items.map((item, index) => (

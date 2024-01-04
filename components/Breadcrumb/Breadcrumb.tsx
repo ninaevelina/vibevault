@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Album } from "@prisma/client";
-import "./breadcrumb.scss";
+
 import { usePathname } from "next/navigation";
 
 interface LinkProps {
