@@ -22,8 +22,8 @@
             white-space: nowrap;
             font-size: clamp(1rem, 0.2093rem + 3.7209vw, 3rem);
             margin: 0 auto;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             padding-left: 10px;
             
         }
@@ -35,6 +35,7 @@
             width: 16px;
             background-size: 100%;
             animation: rotate 10s linear infinite;
+            background-repeat: no-repeat;
         }
 
         &__image {
