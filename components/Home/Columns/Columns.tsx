@@ -9,14 +9,16 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [indexHovered, setIndexHovered] = useState<number | null>(null);
   const items = columnsData;
-  console.log(items);
+  // console.log(items);
 
-  const handleMouseMoveEnter = (index: number) => {
+  const handleMouseEnter = (index: number) => {
     setIndexHovered(index);
+    console.log(index);
   };
 
   const handleMouseLeave = () => {
     setIndexHovered(null);
+    setCursorPosition({ x: 0, y: 0 });
     console.log("handleMouseLeave");
   };
 
@@ -35,7 +37,7 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
             <article
               className={`innercolumn ${isHovered ? "translated" : ""}`}
               onMouseMove={handleMouseMoveEvent}
-              onMouseEnter={() => handleMouseMoveEnter(i)}
+              onMouseEnter={() => handleMouseEnter(i)}
               onMouseLeave={handleMouseLeave}
             >
               <div className="wrapper">
@@ -46,7 +48,7 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
                     width={100}
                     alt="image"
                     className={`innercolumn__image ${
-                      isHovered ? "translated" : ""
+                      isHovered ? "translated" : "hidden"
                     }`}
                     style={{
                       top: `${cursorPosition.y}px`,
