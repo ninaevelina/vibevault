@@ -42,8 +42,8 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
                 {validImageUrl ? (
                   <Image
                     src={item.imageUrl}
-                    height={150}
-                    width={150}
+                    height={100}
+                    width={100}
                     alt="image"
                     className={`innercolumn__image ${
                       isHovered ? "translated" : ""
