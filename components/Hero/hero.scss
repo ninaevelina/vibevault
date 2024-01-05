@@ -1,6 +1,7 @@
 @import "../../styles/main";
 
 .hero-section {
+    border-bottom: 1px solid $black;
     &__logo-container {
         position: relative;
         height: 260px; 
