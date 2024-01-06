@@ -21,7 +21,7 @@ export default function AlbumCard({ album }: AlbumCardProps) {
       </div>
       <div className="album__details">
         <h2 className="album__details--title">{album.title}</h2>
-        <h3>{album.artist}</h3>
+        <h3 className="album__details--artist">{album.artist}</h3>
         <label className="album__details--label">{album.genre}</label>
         <Link href={"/albums/" + album.slug} className="album__details--link">
           View Album

@@ -1,0 +1,55 @@
+@import '../../styles/main';
+
+.breadcrumbs-container {
+
+    width: 100%;
+    border-bottom: 1px solid $black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    .secondary-nav {
+        padding: 10px;
+    
+        .nav-items {
+            display: flex;
+    
+            &__item:nth-of-type(2) {
+                margin-left: 8px;
+    
+            }
+    
+            &__item:nth-of-type(3) {
+                margin-left: 8px;
+            }
+    
+            &__item {
+                text-transform: uppercase;
+                font-size: 0.8rem;
+    
+                &--link::after {
+                    content: "";
+                    margin-left: 4px;
+                    width: 1px;
+                    height: 1px;
+                    padding: 4px;
+                    background-image: url('../../public/caret-right.svg');
+                    background-size: 100%;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+    
+                }
+    
+                .active {
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+                .active::after {
+                    content: "";
+                    background-size: 0%;
+                }
+            }
+        }
+    }
+
+}

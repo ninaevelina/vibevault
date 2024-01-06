@@ -1,9 +1,9 @@
-@import '../../styles/main'; 
+@import '../../../styles/main'; 
 .nav-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 80px;
+    height: 60px;
     justify-content: center;
     align-items: center;
     outline: 1px solid black;
@@ -17,12 +17,12 @@
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        font-weight: 500;
-        
+        font-weight: 500;      
 
         &__item {
             margin-left: 1rem;
             margin-right: 1rem;
+            line-height: 2;
             &--green {
                 @include primary-button;
             }

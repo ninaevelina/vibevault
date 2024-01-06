@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/_globals.scss";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
 
 export const metadata: Metadata = {
   title: "VibeVault",

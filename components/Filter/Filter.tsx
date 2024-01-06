@@ -31,6 +31,9 @@ export const Filter = ({ albums, genre, onGenreChange }: FilterProps) => {
     "Rock",
     "Electronic",
     "d'n'b",
+    "HIPHOP",
+    "R&B",
+    "Neo soul",
   ];
 
   return (
@@ -52,7 +55,6 @@ export const Filter = ({ albums, genre, onGenreChange }: FilterProps) => {
             {genre}
           </button>
         ))}
-        <div>{genre}</div>
       </section>
     </>
   );

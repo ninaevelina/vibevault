@@ -1,16 +1,77 @@
 @import '../../styles/main';
 
+.modal-container-blur {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(12px);
+}
+
+.modal-overlay {
+    position: fixed;
+    //width: 80%;
+    width: 300px;
+    height: 60%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: $white;
+    //transition-duration: 0.4s;
+    @include media-breakpoint(screen-sm) {
+       // width: calc(100% - 100px);
+    }
+    @include media-breakpoint(screen-md) {
+        width: 500px;
+        height: 70%;
+    }
+    @include media-breakpoint(screen-lg) {
+        //width: calc(100% - 600px);
+    }
+    @include media-breakpoint(screen-xl) {
+        //width: calc(100% - 850px);
+    }
+
+    &__close-btn {
+        //display: flex;
+        //align-self: flex-end;
+        position: absolute;
+        top: 34px;
+        right: 20px;
+        width: 30px;
+        background-color: transparent;
+        height: 30px;
+        border-color: transparent;
+        //margin-right: 15px;
+        
+    }
+}
+
 .review-form {
     outline: 1px solid black;
     display: flex;
     flex-direction: column;
-    width: calc(100% - 3.4rem);
-    margin: 0 auto;
-    border-radius: 10px;
-    height: 320px;
-    box-shadow: 4px 8px 0px 0px black;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    @include media-breakpoint(screen-sm) {
+        width: 100%;
+    }
+    @include media-breakpoint(screen-md) {
+        //width: calc(100% - 3.4rem);
+    }
 
-    .rating, .content, .button-container {
+  
+
+    .form-header, .rating, .content, .button-container {
         display: flex;
         flex-direction: column;
         width: calc(100% - 3.4rem);
@@ -25,19 +86,22 @@
         &__label-description {
             font-weight: 600;
             padding-bottom: 5px;
+            text-transform: uppercase;
 
         }
 
         &__options {
-            border: 2px solid $black;
-            border-radius: 4px;
+            border: 1px solid $black;
+            //border-radius: 4px;
             font-weight: 400;
             background-color: $white;
+            height: 30px;
 
             &:focus, &:hover {
-                box-shadow: 1px 2px 0px 0px black;
-                transform: translateY(4px);
+                //box-shadow: 1px 2px 0px 0px black;
+                //transform: translateY(4px);
                 outline: none;
+                border: 2px solid $black;
             }
 
         }
@@ -49,21 +113,23 @@
         &__label-description {
             font-weight: 600;
             padding-bottom: 5px;
+            text-transform: uppercase;
         }
 
         &__textarea {
             resize: none;
-            border: 2px solid $black;
-            border-radius: 4px;
+            border: 1px solid $black;
+            //border-radius: 4px;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             height: 150px;
             
 
             &:focus, &:hover {
-                box-shadow: 1px 2px 0px 0px $black;
-                transform: translateY(4px);
+                //box-shadow: 1px 2px 0px 0px $black;
+                //transform: translateY(4px);
                 outline: none;
+                border: 2px solid $black;
             }
             
         }
@@ -71,22 +137,22 @@
 
     .button-container {
         padding-bottom: 20px;
-        justify-content: center;
-        align-items: center;
+        //justify-content: center;
+        //align-items: center;
         
 
         &__btn {
             width: max-content;
-            background-color: $green;
+            background-color: $black;
             outline: none;
-            border-radius: 8px;
-            border: 2px solid $green;
+            color: $white;
+            border: 2px solid $black;
             font-weight: 600;
-            padding: 2px 10px 2px 10px;
+            padding: 8px 10px 8px 10px;
+            text-transform: uppercase;
 
             &:hover {
-                box-shadow: 4px 4px 0px 0px $black;
-                transform: translateY(2px);
+                cursor: pointer;
                 
             }
 

@@ -109,6 +109,7 @@ export const albums = [
       "https://t2.genius.com/unsafe/600x0/https%3A%2F%2Fimages.genius.com%2F8eb4f76ab9d1b3325c43866a9289bcc4.1000x1000x1.jpg",
     reviews: [],
   },*/
+  /*
   {
     albumId: "11",
     slug: "quest-for-fire",
@@ -173,6 +174,39 @@ export const albums = [
     year: "2002",
     imageUrl:
       "https://t2.genius.com/unsafe/300x0/https%3A%2F%2Fimages.genius.com%2Fecf21b0f01ff90d0d8e3a4d07139f6ca.1000x1000x1.png",
+    reviews: [],
+  },*/
+  {
+    albumId: "17",
+    slug: "ctrl",
+    title: "Ctrl",
+    artist: "SZA",
+    genre: "Neo soul",
+    year: "2017",
+    imageUrl:
+      "https://images.genius.com/62291cc125f492b0f99318b7c2f50735.800x800x150.gif",
+    reviews: [],
+  },
+  {
+    albumId: "18",
+    slug: "sos",
+    title: "SOS",
+    artist: "SZA",
+    genre: "R&B",
+    year: "2022",
+    imageUrl:
+      "https://images.genius.com/1fd966546669dfc0553b3a7698d36f3f.450x450x345.gif",
+    reviews: [],
+  },
+  {
+    albumId: "19",
+    slug: "mm-food",
+    title: "MM..FOOD",
+    artist: "MF DOOM",
+    genre: "HIPHOP",
+    year: "2004",
+    imageUrl:
+      "https://t2.genius.com/unsafe/300x300/https%3A%2F%2Fimages.genius.com%2Fa6e2819391cebdaf2a685547eb954132.992x992x1.png",
     reviews: [],
   },
 ];

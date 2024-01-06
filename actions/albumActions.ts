@@ -1,4 +1,6 @@
 import { Album } from "@prisma/client";
+import { cache } from "react";
+import { AlbumWithReviews } from "@/types/album";
 
 const baseUrl =
   "http://localhost:3000/api" ||
@@ -14,3 +16,12 @@ export const getAllAlbums = async (): Promise<Album[]> => {
   const results = await response.json();
   return results;
 };
+
+export const getAlbumBySlug = cache(
+  async (slug: string): Promise<AlbumWithReviews> => {
+    const response = await fetch(`${baseUrl}/albums/${slug}`);
+    const data = (await response.json()) as AlbumWithReviews;
+    console.log(data);
+    return data;
+  }
+);

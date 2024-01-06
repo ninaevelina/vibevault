@@ -27,8 +27,7 @@
     border-color: $green;
     display: block;
     text-align: center;
-    border-radius: 8px;
-    padding: 0px 2px 0px 2px;
+    width: 70px;
     &:hover {
         background-color: $grey;
         border-color: $grey;
@@ -47,6 +46,7 @@
     font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
+    border-width: 1px;
 
     &:hover {
         background-color: $lemon;
@@ -54,5 +54,21 @@
     }
     &.active {
         background-color: $lemon;
+    }
+}
+
+@mixin tertiary-button {
+    width: max-content;
+    background-color: $black;
+    outline: none;
+    color: $white;
+    border: 2px solid $black;
+    font-weight: 600;
+    padding: 6px 10px 6px 10px;
+    text-transform: uppercase;
+
+    &:hover {
+        cursor: pointer;
+        
     }
 }

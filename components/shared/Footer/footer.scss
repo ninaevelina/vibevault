@@ -1,0 +1,75 @@
+@import "../../../styles/main";
+
+footer {
+    background-color: $black;
+    color: $white;
+    padding: 40px 0px 20px 0px;
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        @include media-breakpoint(screen-md) {
+            flex-direction: row;
+            justify-content: space-around;
+
+        }
+
+        &__column {
+
+            &--logo-container {
+                background-image: url('../../../public/vvlogo-f.svg');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                height: 120px;
+                width: 120px;
+                background-position: 50%;
+                @include media-breakpoint(screen-md) {
+                    width: 200px;
+                    background-position: 5% 20%;
+                }
+                
+            }
+            li, a {
+                font-weight: 500;
+                line-height: 2;
+
+                &:hover {
+                    color: $grey;
+                } 
+            }
+            &--link-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            &--link-item::after {
+                content: "";
+                background-image: url('../../../public/arrow-right.svg');
+                position: relative;
+                display: inline-block;
+                background-size: 100%;
+                height: 18px;
+                width: 18px;
+            }      
+        }
+    }
+    .copyright {
+        margin-top: 80px;
+        margin-left: 10px;
+
+        @include media-breakpoint(screen-md) {
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
+            color: $white;
+            font-weight: 400;
+            font-size: 0.8rem;
+        }
+    }
+}
