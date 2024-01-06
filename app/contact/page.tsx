@@ -1,4 +1,5 @@
 import { BreadcrumbMenu } from "@/components/BreadcrumbMenu/BreadcrumbMenu";
+import RequestForm from "@/components/RequestForm/RequestForm";
 
 export default function ContactPage() {
   const breadcrumbItems = [
@@ -20,6 +21,7 @@ export default function ContactPage() {
           <p>Lorem ipsum</p>
         </div>
       </section>
+      <RequestForm />
     </>
   );
 }
