@@ -3,7 +3,7 @@ import "./columns.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { ColumnsProps } from "@/types/columnData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Columns = ({ columnsData }: ColumnsProps) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -11,21 +11,30 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
   const items = columnsData;
   // console.log(items);
 
-  const handleMouseEnter = (index: number) => {
+  const handleMouseEnter = (index: number, e: React.MouseEvent) => {
     setIndexHovered(index);
+    setCursorPosition({ x: e.pageX, y: e.pageY });
     console.log(index);
   };
 
-  const handleMouseLeave = () => {
-    setIndexHovered(null);
-    setCursorPosition({ x: 0, y: 0 });
-    console.log("handleMouseLeave");
+  const handleMouseLeave = (index: number) => {
+    if (indexHovered === index) {
+      setIndexHovered(null);
+      //setCursorPosition({ x: 0, y: 0 });
+      console.log("handleMouseLeave");
+    }
   };
 
   const handleMouseMoveEvent = (e: React.MouseEvent) => {
-    setCursorPosition({ x: e.pageX, y: e.pageY });
-    console.log("handleMouseMoveEvent");
+    if (indexHovered !== null) {
+      setCursorPosition({ x: e.pageX, y: e.pageY });
+      console.log("handleMouseMoveEvent");
+    }
   };
+
+  useEffect(() => {
+    console.log("index update");
+  }, [indexHovered]);
 
   return (
     <>
@@ -33,19 +42,21 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
         const validImageUrl = item.imageUrl && item.imageUrl.length >= 3;
         const isHovered = i === indexHovered;
         return (
-          <Link href={item.link} className="column" key={i}>
-            <article
-              className={`innercolumn ${isHovered ? "translated" : ""}`}
-              onMouseMove={handleMouseMoveEvent}
-              onMouseEnter={() => handleMouseEnter(i)}
-              onMouseLeave={handleMouseLeave}
-            >
+          <Link
+            href={item.link}
+            className="column"
+            key={i}
+            onMouseMove={handleMouseMoveEvent}
+            onMouseEnter={(e) => handleMouseEnter(i, e)}
+            onMouseOut={() => handleMouseLeave(i)}
+          >
+            <article className={`innercolumn ${isHovered ? "translated" : ""}`}>
               <div className="wrapper">
-                {validImageUrl ? (
+                {validImageUrl && (
                   <Image
                     src={item.imageUrl}
-                    height={100}
-                    width={100}
+                    height={50}
+                    width={50}
                     alt="image"
                     className={`innercolumn__image ${
                       isHovered ? "translated" : "hidden"
@@ -53,10 +64,9 @@ export const Columns = ({ columnsData }: ColumnsProps) => {
                     style={{
                       top: `${cursorPosition.y}px`,
                       left: `${cursorPosition.x}px`,
+                      display: isHovered ? "block" : "none",
                     }}
                   />
-                ) : (
-                  <span></span>
                 )}
                 <h3 className="innercolumn__heading">{item.heading}</h3>
                 <span className="innercolumn__text">{item.text}</span>

@@ -1,4 +1,5 @@
 import checkoutImg from "../public/img-checkout.jpg";
+import imgBeyonce from "../public/bey.jpeg";
 export interface ColumnData {
   link: string;
   imageUrl: string;
@@ -31,7 +32,7 @@ export const columnsData: ColumnData[] = [
   },
   {
     link: "/contact",
-    imageUrl: "",
+    imageUrl: imgBeyonce.src,
     heading: "Request an album",
     text: "Yay",
   },
