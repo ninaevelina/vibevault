@@ -9,6 +9,12 @@ type ResponseData = {
 };
 
 export async function POST(req: NextRequest) {
+  const test = () => {
+    if (!process.env.SENDGRID_API_KEY) {
+      console.log("Api key undefined");
+    }
+  };
+  test();
   let response: ResponseData = {};
   const body = await req.json();
 
