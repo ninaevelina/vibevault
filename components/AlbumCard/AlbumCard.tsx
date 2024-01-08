@@ -2,12 +2,15 @@ import { Album } from "@prisma/client";
 import Link from "next/link";
 import "./albumcard.scss";
 import Image from "next/image";
+import useBaseUrl from "@/hooks/useBaseURL";
 
 interface AlbumCardProps {
   album: Album;
 }
 
 export default function AlbumCard({ album }: AlbumCardProps) {
+  const baseURL = useBaseUrl();
+  console.log(baseURL);
   return (
     <article className="album">
       <div className="album__image">
@@ -23,7 +26,10 @@ export default function AlbumCard({ album }: AlbumCardProps) {
         <h2 className="album__details--title">{album.title}</h2>
         <h3 className="album__details--artist">{album.artist}</h3>
         <label className="album__details--label">{album.genre}</label>
-        <Link href={"/albums/" + album.slug} className="album__details--link">
+        <Link
+          href={`${baseURL}/albums/${album.slug}`}
+          className="album__details--link"
+        >
           View Album
         </Link>
       </div>
