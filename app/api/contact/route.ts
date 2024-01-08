@@ -1,7 +1,7 @@
-import sendgrid from "@sendgrid/mail";
+import sgMail from "@sendgrid/mail";
 import { NextRequest, NextResponse } from "next/server";
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY || "");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 type ResponseData = {
   message?: string;
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     html: message.replace(/\r\n/g, "<br>"),
   };
 
-  await sendgrid
+  await sgMail
     .send(data)
     .then(() => {
       response = {
