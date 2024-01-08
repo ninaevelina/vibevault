@@ -1,11 +1,13 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import "./requestForm.scss";
 
 export const RequestForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [alert, setAlert] = useState(false);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -29,6 +31,7 @@ export const RequestForm = () => {
         setName("");
         setEmail("");
         setMessage("");
+        setAlert(true);
       } else {
         console.log("Error submitting request");
       }
@@ -36,39 +39,57 @@ export const RequestForm = () => {
       console.error("Error", error);
     }
   };
+
+  const displayAlert = () => {
+    if (alert === true) {
+      return (
+        <div className="alert">
+          <span>Success! Your request was successfully sent.</span>
+          <button onClick={() => setAlert(false)}></button>
+        </div>
+      );
+    }
+  };
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label className="name">
-          <span>Name: </span>
+    <form onSubmit={handleSubmit} className="request-form">
+      <p>Submit your request</p>
+      <div className="columns">
+        <label className="columns__name">
           <input
             onChange={(e) => setName(e.target.value)}
             required={true}
             value={name}
             type="text"
+            placeholder="Your name *"
+            className="columns__name--input"
           />
         </label>
-        <label className="email">
-          <span>Email:</span>
+        <label className="columns__email">
           <input
             onChange={(e) => setEmail(e.target.value)}
             required={true}
             value={email}
             type="text"
+            placeholder="Your email *"
+            className="columns__email--input"
           />
         </label>
-        <label className="message">
-          <span>Message:</span>
+        <label className="columns__message">
           <textarea
             required
             onChange={(e) => setMessage(e.target.value)}
             value={message}
+            placeholder="Message *"
+            className="columns__message--input"
           />
         </label>
       </div>
-      <div>
-        <button type="submit">Send</button>
+      <div className="button-container">
+        <button type="submit" className="button-container__button">
+          SUBMIT
+        </button>
       </div>
+      {displayAlert()}
     </form>
   );
 };
