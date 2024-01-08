@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./breadcrumb.scss";
 
 interface BreadcrumbItem {
-  label: string;
+  label: string | undefined;
   link: string;
 }
 

@@ -1,0 +1,116 @@
+@import '../../styles/main';
+
+.request-form {
+
+    width: 280px;
+
+    p {
+        width: calc(100% - 1rem);
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+    
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 1rem);
+        margin: 0 auto;
+
+        &__name, &__email, &__message {
+            display: inline-flex;
+            flex-direction: column;
+            height: 85px;
+            position: relative;
+
+            &--input {
+                border: 0;
+                height: 40px;
+                background-color: transparent;
+                border-color: transparent;
+                border-bottom: 1px solid lighten(black, 70%);
+            }
+            &--input:focus {
+                outline: none;
+                border-bottom: 1px solid black;
+            }
+
+        }
+
+        &__message {
+            height: 100px;
+            margin-bottom: 16px;
+
+            &--input {
+                padding: 16px 14px;
+                height: 100px;
+                resize: none;
+                border: 1px solid lighten(black, 70%);
+                font-family: 'Inter', Arial, Helvetica, sans-serif;
+            }
+            &--input:focus {
+                border: 1px solid black;
+            }
+
+            &--input::placeholder {
+                position: absolute;
+                top: 14px;
+                left: 1px;
+            }
+        }
+    }
+
+    .button-container {
+        width: calc(100% - 1rem);
+        margin: 0 auto;
+
+        &__button {
+            width: 100%;
+            padding: 16px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            outline: 0px;
+            border: 0px;
+            margin: 0px 0px 16px;
+            vertical-align: middle;
+            appearance: none;
+            text-decoration: none;
+            border-radius: 0px;
+            background-color: black;
+            color: white;
+            font-weight: 500;
+        }
+    }
+
+    .alert {
+        display: flex;
+        outline: 1px solid $black;
+        font-size: 0.8rem;
+        padding: 8px;
+        text-wrap: balance;
+        width: calc(100% - 1rem);
+        margin: 0px auto;
+        span {
+            display: flex;
+        }
+
+        button {
+            display: inline-flex;
+            border: none;
+            outline: 1px solid black;
+            align-items: center;
+            background-color: $white;
+            font-weight: 500;
+            padding: 2px;
+            background-image: url('../../public/x.svg');
+            background-size: 100%;
+            height: 14px;
+            width: 16px;
+            background-repeat: no-repeat;
+
+        }
+    }
+}

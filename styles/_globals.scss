@@ -112,6 +112,44 @@ ul {
     
 }
 
+.grid-small {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px 0px;
+    justify-items: center;
+    //width: calc(100% - 2rem);
+    //margin: 0px auto;
+
+    @include media-breakpoint(screen-md) {
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 0px;
+        
+    }
+
+    &__first-col {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 40px;
+        @include media-breakpoint(screen-md) {
+            justify-items: flex-start;
+            width: auto;
+            
+        }
+    }
+
+    &__second-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include media-breakpoint(screen-md) {
+            justify-content: end;
+            
+        }
+    }
+    
+}
+
 .redirect {
     &__link-text {
         text-decoration: underline;  
@@ -124,4 +162,9 @@ ul {
 
 .button-tertiary {
     @include tertiary-button;
+}
+
+.text-wrap-balance {
+    display: flex;
+    text-wrap: balance;
 }

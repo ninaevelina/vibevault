@@ -9,6 +9,7 @@ import AlbumImage from "@/components/AlbumImage/AlbumImage";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 import Accordion from "@/components/Accordion/Accordion";
 import { BreadcrumbMenu } from "@/components/BreadcrumbMenu/BreadcrumbMenu";
+import { AlbumDetails } from "@/components/AlbumDetails/AlbumDetails";
 
 export interface AlbumPageProps {
   params: {
@@ -17,7 +18,7 @@ export interface AlbumPageProps {
 }
 
 export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
-  const album = await getAlbumBySlug(slug);
+  /* const album = await getAlbumBySlug(slug);
   console.log(album, "album by slug");
   const reviews = album.reviews;
   console.log("reviews", reviews);
@@ -72,24 +73,17 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
         </div>
       );
     }
-  };
+  };*/
 
   return (
+    /*
     <>
       {album && <BreadcrumbMenu items={breadcrumbItems} />}
       <section className="album-view">
         <div className="album-view__image">
           {album && <AlbumImage album={album} />}
         </div>
-        {/*<div className="test">
-          <Accordion title={"Title"} content={album.title} />
-          <Accordion title={"Artist"} content={album.artist} />
-          <Accordion title={"Release year"} content={album.year} />
-          <Accordion
-            title={"Rating"}
-            content={getAverageRating()?.toString() ?? "No rating"}
-          />
-  </div>*/}
+     
         <div className="container-large">
           <div className="small-container">
             <div>
@@ -131,6 +125,7 @@ export default async function AlbumPage({ params: { slug } }: AlbumPageProps) {
         <h4>Reviews</h4>
         <div className="reviews">{renderReviews()}</div>
       </section>
-    </>
+    </>*/
+    <AlbumDetails params={{ slug }} />
   );
 }
