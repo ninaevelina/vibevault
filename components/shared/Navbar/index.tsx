@@ -1,19 +1,18 @@
 "use client";
-import useBaseUrl from "@/hooks/useBaseURL";
+
 import "./navbar.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const pathname = usePathname();
-  const baseURL = useBaseUrl();
 
   return (
     <nav className="nav-container">
       <ul className="nav-items">
         <li className="nav-items__item">
           <Link
-            href="albums"
+            href="/albums"
             className={`nav-items__item--green ${
               pathname === "/albums" ? "active" : ""
             }`}
