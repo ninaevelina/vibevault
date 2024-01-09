@@ -1,16 +1,21 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import "./reviewform.scss";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { Close } from "../Icons/Close";
 
 interface ReviewFormProps {
   albumId?: string;
   slug: string;
+  setIsReviewSubmitted: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
+export default function ReviewForm({
+  albumId,
+  slug,
+  setIsReviewSubmitted,
+}: ReviewFormProps) {
   const [rating, setRating] = useState("");
   const [content, setContent] = useState("");
   const router = useRouter();
@@ -40,9 +45,11 @@ export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
         console.log(createdReview);
         setIsSubmitted(true);
 
+        setIsReviewSubmitted(true);
+
         setRating("");
         setContent("");
-        router.refresh();
+        //router.refresh();
       } else {
         console.log("Could not create review");
       }
@@ -113,7 +120,10 @@ export default function ReviewForm({ albumId, slug }: ReviewFormProps) {
               <div>
                 <p>Thank you! 🖤</p>
                 <button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    redirect("/");
+                  }}
                   className="tertiary-button"
                 >
                   Create new review
