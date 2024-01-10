@@ -13,7 +13,7 @@ export const Navbar = () => {
         <li className="nav-items__item">
           <Link
             href="/albums"
-            className={`nav-items__item--green ${
+            className={`nav-items__item ${
               pathname === "/albums" ? "active" : ""
             }`}
           >
