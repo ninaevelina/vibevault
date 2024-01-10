@@ -6,7 +6,7 @@
     height: 60px;
     justify-content: center;
     align-items: center;
-    outline: 1px solid black;
+    outline: 1px solid $black;
 
     @include media-breakpoint(screen-md) {
     display: grid;
@@ -23,15 +23,23 @@
             margin-left: 1rem;
             margin-right: 1rem;
             line-height: 2;
-            &--green {
-                @include primary-button;
-            }
         }
         .active {
             font-weight: 600;
-            text-decoration: underline;
+            position: relative;
+        }
+        .active::after {
+            content: "";
+            background-image: url("../../../public/active-link.svg");
+            background-size: 90%;
+            height: 50px;
+            width: 100px;
+            position: absolute;
+            background-repeat: no-repeat;
+            right: -30%;
+            bottom: -20px;  
         }
 
-       
     }
 }
+
