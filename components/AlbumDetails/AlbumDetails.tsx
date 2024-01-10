@@ -103,7 +103,7 @@ export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
                 <h1>{album?.title}</h1>
                 <h2>{album?.artist}</h2>
               </div>
-              <div>{album?.genre}</div>
+              <div className="album-view__label">{album?.genre}</div>
             </div>
 
             <ul className="album-view__details">
@@ -126,7 +126,7 @@ export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
             </ul>
             <div className="small-container">
               <div>
-                <span>{reviews?.length + " " + "reviews"}</span>
+                <span>{reviews?.length + " " + "REVIEWS"}</span>
               </div>
               <div>
                 <ReviewForm
