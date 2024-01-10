@@ -12,9 +12,8 @@
 
 .modal-overlay {
     position: fixed;
-    //width: 80%;
     width: 300px;
-    height: 60%;
+    height: 300px;
     top: 0;
     right: 0;
     bottom: 0;
@@ -23,35 +22,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    
     background-color: $white;
     //transition-duration: 0.4s;
-    @include media-breakpoint(screen-sm) {
-       // width: calc(100% - 100px);
-    }
+
     @include media-breakpoint(screen-md) {
         width: 500px;
-        height: 70%;
-    }
-    @include media-breakpoint(screen-lg) {
-        //width: calc(100% - 600px);
-    }
-    @include media-breakpoint(screen-xl) {
-        //width: calc(100% - 850px);
+        height: 400px;
     }
 
+
     &__close-btn {
-        //display: flex;
-        //align-self: flex-end;
         position: absolute;
-        top: 34px;
+        top: 20px;
         right: 20px;
-        width: 30px;
+        width: 20px;
         background-color: transparent;
-        height: 30px;
+        height: 20px;
         border-color: transparent;
-        //margin-right: 15px;
-        
+        cursor: pointer;
     }
 }
 
@@ -64,12 +53,7 @@
     justify-content: space-around;
     @include media-breakpoint(screen-sm) {
         width: 100%;
-    }
-    @include media-breakpoint(screen-md) {
-        //width: calc(100% - 3.4rem);
-    }
-
-  
+    } 
 
     .form-header, .rating, .content, .button-container {
         display: flex;
@@ -79,77 +63,74 @@
 
     }
 
+    .form-header {
+        padding: 20px 0px 10px 0px;
+        font-size: 0.8rem;
+        @include media-breakpoint(screen-md) {
+            font-size: 1rem;
+        }
+    }
+
     .rating {
-        padding-top: 20px;
         padding-bottom: 20px;
 
-        &__label-description {
-            font-weight: 600;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-
-        }
-
         &__options {
-            border: 1px solid $black;
-            //border-radius: 4px;
+            border: 1px solid lighten($black, 70%);
             font-weight: 400;
             background-color: $white;
             height: 30px;
 
             &:focus, &:hover {
-                //box-shadow: 1px 2px 0px 0px black;
-                //transform: translateY(4px);
                 outline: none;
-                border: 2px solid $black;
+                border: 1px solid $black;
             }
 
         }
     }
 
     .content {
-        padding-bottom: 20px;
-
-        &__label-description {
-            font-weight: 600;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-        }
+        padding-bottom: 40px;
 
         &__textarea {
             resize: none;
-            border: 1px solid $black;
-            //border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            border: 1px solid lighten($black, 70%);
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
             font-weight: 500;
-            height: 150px;
-            
+            height: 80px;
+            padding: 4px; 
+            font-size: 0.8rem;   
 
             &:focus, &:hover {
-                //box-shadow: 1px 2px 0px 0px $black;
-                //transform: translateY(4px);
                 outline: none;
-                border: 2px solid $black;
+                border: 1px solid $black;
             }
             
         }
     }
 
     .button-container {
-        padding-bottom: 20px;
-        //justify-content: center;
-        //align-items: center;
-        
+        width: calc(100% - 3.4rem);
+        margin: 0 auto;
 
         &__btn {
-            width: max-content;
-            background-color: $black;
-            outline: none;
-            color: $white;
-            border: 2px solid $black;
-            font-weight: 600;
-            padding: 8px 10px 8px 10px;
+            width: 100%;
+            padding: 16px;
             text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            outline: 0px;
+            border: 0px;
+            margin: 0px 0px 16px;
+            vertical-align: middle;
+            appearance: none;
+            text-decoration: none;
+            border-radius: 0px;
+            background-color: black;
+            color: white;
+            font-weight: 500;
+            //TODO: refactor to mixin
 
             &:hover {
                 cursor: pointer;
