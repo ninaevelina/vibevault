@@ -2,18 +2,11 @@
 
 .album-view {
     display: grid;
-    border-bottom: 2px solid $black;
-    
-    
     
     @include media-breakpoint(screen-sm) {
         grid-template-columns: 1fr;
-        
     }
     @include media-breakpoint(screen-md) {
-        //grid-template-columns: 1fr;
-        //width: calc(100% - 2rem);
-        //margin: 0 auto;
         grid-template-columns: repeat(2,minmax(1em,1fr));
     }
     @include media-breakpoint(screen-lg) {
@@ -26,12 +19,9 @@
         flex-direction: column;
         width: 100%;
         @include media-breakpoint(screen-sm) {
-           // width: calc(100vw - 1rem);
             margin: 0 auto;
-            //padding-top: 10px;
         }
         @include media-breakpoint(screen-md) {
-            //width: 50vw;
             padding-top: 0px;
         }
         &--img {
@@ -44,29 +34,29 @@
         }
         
     }
+
+    &__label {
+        @include label;
+    }
     &__details {
-        outline: 1px solid $black;
-        @include media-breakpoint(screen-sm) {
-            //width: calc(100vw - 1rem);
-            //margin: 0 auto;
-            //padding-top: 10px;
-        }
         @include media-breakpoint(screen-md) {
-            //width: auto;
             margin: 30px 0px;
         }
         @include media-breakpoint(screen-lg) {
-            //padding: 10px;
             width: -webkit-fill-available;
+            width: -moz-available;
         }
        
         &--detail {
             display: grid;
             grid-template-columns: 1fr 1fr;
             padding-top: 10px;
-            outline: 1px solid black;
             font-weight: 500;
+            border-bottom: 1px solid lighten($black, 50%);
             
+        }
+        &--detail:hover {
+            border-bottom: 1px solid $black;
         }
        
        
@@ -76,56 +66,25 @@
 
 .reviews-container {
     margin: 0 auto;
-    //width: calc(100vw - 1rem);
-    padding-top: 32px;
-    @include media-breakpoint(screen-md) {
-       // width: calc(100% - 2rem);
-        //margin: 0 auto;
 
-    }
     h4 {
-       //padding-top: 20px;
-       //padding-bottom: 40px;
        border-top: 1px solid black;
        border-bottom: 1px solid black;
        text-transform: uppercase;
        font-weight: 500;
-       padding: 10px;
-       
-       @include media-breakpoint(screen-lg) {
-        //grid-column: 2;
-        //margin: auto;
-        //width: calc(100% - 2rem);
-       }
-       @include media-breakpoint(screen-xl) {
-        //grid-column: 3;
-        //margin: auto;
-        //width: calc(100% - 2rem);
-       }
+       padding: 20px 10px 20px 10px;
     }
 
     .reviews {
         display: flex;
-        //flex-wrap: wrap;
         justify-content: space-between;
-        //
         flex-direction: row;
         overflow-x: scroll !important;
         scroll-behavior: auto;
         scroll-snap-type: x mandatory;
         gap: 1px;
         scrollbar-width: none;
-
-        @include media-breakpoint(screen-lg) {
-            //width: calc(100% - 2rem);
-            //margin: auto;
-            //grid-column: 2;
-        }
-        @include media-breakpoint(screen-xl) {
-            //width: calc(100% - 2rem);
-            //margin: auto;
-            //grid-column: 3;
-        }
+        border-bottom: 1px solid $white;
     }
     .reviews::-webkit-scrollbar {
         display: none;
