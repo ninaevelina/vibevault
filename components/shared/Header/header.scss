@@ -2,7 +2,7 @@
 .header-container {
     display: flex;
     flex-direction: column;
-    //text-transform: uppercase;
+    border-bottom: 1px solid $black;
     @include media-breakpoint(screen-md) {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -15,11 +15,11 @@
         text-align: center;
         justify-content: center;
         height: 60px;
-        outline: 1px solid black;
         background-image: url('../../../public/vvlogo-small.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: 40%;
+        background-color: $lemon;
         @include media-breakpoint(screen-md) {
             width: 30vw;
         }
