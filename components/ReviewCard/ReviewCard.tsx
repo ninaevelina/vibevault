@@ -30,8 +30,6 @@ export default function ReviewCard({ review }: ReviewCardProps) {
       const newLSReviews = reviewsLS.filter((item) => item.id !== review.id);
       saveToLS(newLSReviews);
       setReviewsLS(newLSReviews);
-
-      console.log(newLSReviews);
     } else {
       const reviewWithLikes: ReviewLS = {
         id: review.id,
@@ -52,7 +50,6 @@ export default function ReviewCard({ review }: ReviewCardProps) {
   const isReviewLiked = reviewsLS.some(
     (likedReview) => likedReview.id === review.id
   );
-  console.log("isreviewliked", isReviewLiked);
 
   const renderRating = (rating: string) => {
     const formattedRating = parseInt(rating, 10);

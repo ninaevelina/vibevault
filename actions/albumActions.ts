@@ -10,10 +10,9 @@ export const getAllAlbums = async (): Promise<Album[]> => {
   const response = await fetch(`${baseURL}/api/albums`, {
     //cache: "reload",
   });
-  console.log("albumdata", response.json);
 
   const results = await response.json();
-  console.log(results);
+
   return results;
 };
 
@@ -22,7 +21,7 @@ export const getAlbumBySlug = cache(
     const baseURL = useBaseUrl();
     const response = await fetch(`${baseURL}/api/albums/${slug}`);
     const data = (await response.json()) as AlbumWithReviews;
-    console.log(data);
+
     return data;
   }
 );

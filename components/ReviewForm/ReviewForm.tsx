@@ -40,7 +40,6 @@ export default function ReviewForm({
       });
 
       if (response.ok) {
-        console.log("Review created");
         const createdReview = await response.json();
         console.log(createdReview);
         setIsSubmitted(true);
