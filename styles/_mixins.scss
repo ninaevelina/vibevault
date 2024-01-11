@@ -21,19 +21,7 @@
    }
 }
 
-@mixin primary-button {
-    color: $black;
-    background-color: $green;
-    border-color: $green;
-    display: block;
-    text-align: center;
-    width: 70px;
-    &:hover {
-        background-color: $grey;
-        border-color: $grey;
-    }
-    
-}
+
 
 @mixin secondary-button {
     color: $black;
@@ -42,18 +30,20 @@
     text-align: center;
     height: 40px;
     margin: 2px;
-    padding: 2px 3px 2px 3px;
-    font-weight: 600;
+    padding: 2px 8px 2px 8px;
+    font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
     border-width: 1px;
 
     &:hover {
-        background-color: $lemon;
+        background-color: $black;
+        color: $white;
         
     }
     &.active {
-        background-color: $lemon;
+        background-color: $black;
+        color: $white;
     }
 }
 
@@ -71,4 +61,16 @@
         cursor: pointer;
         
     }
+}
+
+@mixin label {
+    border-radius: 8px;
+    border: 1px solid $black;
+    background-color: $black;
+    color: $white;
+    width: fit-content;
+    padding: 3px 4px 3px 4px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
 }

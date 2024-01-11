@@ -53,26 +53,16 @@ export const AlbumsView = () => {
     <>
       <section className="small-container">
         <BreadcrumbMenu items={breadcrumbItems} />
-
         <Search searchValue={searchValue} handleSearch={handleSearch} />
       </section>
       <section className="flex-center">
-        <h1>{genre}</h1>
+        <h1>{genre.toUpperCase()}</h1>
         <Filter
           albums={albums}
           genre={genre}
           onGenreChange={handleGenreChoice}
         />
       </section>
-      {/*  <section className="grid-container">
-        <Filter
-          albums={albums}
-          genre={genre}
-          onGenreChange={handleGenreChoice}
-        />
-        <Search searchValue={searchValue} handleSearch={handleSearch} />
-      </section> */}
-
       <section className="grid-container">
         {isLoading ? (
           <Loader />

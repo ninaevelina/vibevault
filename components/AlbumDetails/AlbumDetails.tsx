@@ -18,6 +18,7 @@ export interface AlbumPageProps {
 export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
   const [album, setAlbum] = useState<AlbumWithReviews>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isReviewSubmitted, setIsReviewSubmitted] = useState(false);
 
   const breadcrumbItems = [
     {
@@ -39,10 +40,11 @@ export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
       setIsLoading(true);
       const data = await getAlbumBySlug(slug);
       setAlbum(data);
+      setIsReviewSubmitted(false);
       setIsLoading(false);
     };
     getData();
-  }, [slug]);
+  }, [isReviewSubmitted, slug]);
 
   const reviews = album?.reviews;
 
@@ -101,7 +103,7 @@ export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
                 <h1>{album?.title}</h1>
                 <h2>{album?.artist}</h2>
               </div>
-              <div>{album?.genre}</div>
+              <div className="album-view__label">{album?.genre}</div>
             </div>
 
             <ul className="album-view__details">
@@ -124,10 +126,14 @@ export const AlbumDetails = ({ params: { slug } }: AlbumPageProps) => {
             </ul>
             <div className="small-container">
               <div>
-                <span>{reviews?.length + " " + "reviews"}</span>
+                <span>{reviews?.length + " " + "REVIEWS"}</span>
               </div>
               <div>
-                <ReviewForm slug={slug} albumId={album?.id} />
+                <ReviewForm
+                  slug={slug}
+                  albumId={album?.id}
+                  setIsReviewSubmitted={setIsReviewSubmitted}
+                />
               </div>
             </div>
           </div>

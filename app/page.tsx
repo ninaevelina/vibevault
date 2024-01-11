@@ -1,12 +1,13 @@
 import { Hero } from "@/components/Hero/Hero";
 import "../styles/_globals.scss";
-import Container from "@/components/shared/Container/Container";
+import Columns from "@/components/Home/Columns/Columns";
+import { columnsData } from "@/types/columnData";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Container />
+      <Columns columnsData={columnsData} />
     </>
   );
 }

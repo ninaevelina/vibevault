@@ -4,14 +4,20 @@
     border-bottom: 1px solid $black;
     &__logo-container {
         position: relative;
-        height: 260px; 
+        height: 120px;
+        pointer-events: none;
+        @include media-breakpoint(screen-md) {
+            height: 160px;
+        }
+        @include media-breakpoint(screen-lg) {
+            height: 200px;
+        }
 
         &--logo {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            //font-size: 12rem;
             font-size: clamp(3.18rem, -4.1395rem + 24.186vw, 12rem);
             letter-spacing: 0.1rem;
         }
