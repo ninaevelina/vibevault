@@ -3,9 +3,9 @@
 import { Review } from "@prisma/client";
 import "./reviewcard.scss";
 import { Star } from "../Icons/Star";
-import { getLSReviews, saveToLS } from "@/actions/localStorage";
+import { getLSReviews, saveToLS } from "../../actions/localStorage";
 import { useState } from "react";
-import { ReviewLS } from "@/types/reviewLS";
+import { ReviewLS } from "../../types/reviewLS";
 import Heart from "../Icons/Heart";
 import HeartFilled from "../Icons/HeartFilled";
 

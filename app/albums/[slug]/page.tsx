@@ -1,6 +1,6 @@
 import "./albumpage.scss";
 
-import { AlbumDetails } from "@/components/AlbumDetails/AlbumDetails";
+import { AlbumDetails } from "../../../components/AlbumDetails/AlbumDetails";
 
 export interface AlbumPageProps {
   params: {

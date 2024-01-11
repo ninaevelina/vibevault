@@ -1,7 +1,7 @@
 "use client";
 import "./columns.scss";
 import Link from "next/link";
-import { ColumnsProps } from "@/types/columnData";
+import { ColumnsProps } from "../../../types/columnData";
 
 export const Columns = ({ columnsData }: ColumnsProps) => {
   const items = columnsData;

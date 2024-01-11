@@ -1,6 +1,6 @@
 "use client";
 
-import { getAllAlbums } from "@/actions/albumActions";
+import { getAllAlbums } from "../../actions/albumActions";
 import { Album } from "@prisma/client";
 import React, { useEffect, useState } from "react";
 import { Search } from "../Search/Search";

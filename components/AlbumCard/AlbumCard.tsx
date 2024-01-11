@@ -2,7 +2,7 @@ import { Album } from "@prisma/client";
 import Link from "next/link";
 import "./albumcard.scss";
 import Image from "next/image";
-import useBaseUrl from "@/hooks/useBaseURL";
+import useBaseUrl from "../../hooks/useBaseURL";
 
 interface AlbumCardProps {
   album: Album;

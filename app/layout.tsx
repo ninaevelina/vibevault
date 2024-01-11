@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/_globals.scss";
-import { Header } from "@/components/shared/Header";
-import { Footer } from "@/components/shared/Footer";
+import { Header } from "../components/shared/Header/index";
+import { Footer } from "../components/shared/Footer";
 import starIcon from "../public/small-star.svg";
 
 export const metadata: Metadata = {

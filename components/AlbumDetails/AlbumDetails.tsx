@@ -1,7 +1,7 @@
 "use client";
 
-import { getAlbumBySlug } from "@/actions/albumActions";
-import { AlbumWithReviews } from "@/types/album";
+import { getAlbumBySlug } from "../../actions/albumActions";
+import { AlbumWithReviews } from "../../types/album";
 import { useEffect, useState } from "react";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import { BreadcrumbMenu } from "../BreadcrumbMenu/BreadcrumbMenu";

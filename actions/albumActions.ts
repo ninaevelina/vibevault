@@ -1,7 +1,7 @@
 import { Album } from "@prisma/client";
 import { cache } from "react";
-import { AlbumWithReviews } from "@/types/album";
-import { useBaseUrl } from "@/hooks/useBaseURL";
+import { AlbumWithReviews } from "../types/album";
+import { useBaseUrl } from "../hooks/useBaseURL";
 
 export const getAllAlbums = async (): Promise<Album[]> => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
