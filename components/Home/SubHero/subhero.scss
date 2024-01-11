@@ -1,0 +1,79 @@
+@import "../../../styles/main";
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.subhero {
+    height: 400px;
+    width: 100%;
+
+    &__icon-container {
+       height: 150px;
+       width: 100%;
+       display: flex;
+       justify-content: center;
+
+       &--icon {
+        height: 90%;
+        width: 90%;
+        animation: rotate 10s linear infinite;
+
+        @include media-breakpoint(screen-md) {
+            height: 90%;
+            width: 90%;
+        }
+
+        @include media-breakpoint(screen-lg) {
+            height: 90%;
+            width: 90%;
+        }
+       }
+    }
+
+    &__text-blocks {
+        outline: 1px solid black;
+        //height: 200px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 0px;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        &--first, &--second, &--third {
+            //outline: 1px solid red;
+            height: 30px;
+            padding: 0px 16px 0px 16px;
+           // width: 75%;
+            //text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $black;
+            color: $white;
+            text-transform: uppercase;
+            font-weight: 500;
+
+            &:hover {
+                background-color: $lemon;
+                color: $black;
+                transform: rotate(5deg) scale(1.2);   
+            }
+            &:nth-child(2):hover {
+               transform: rotate(-5deg) scale(1.2);  
+            }
+            
+            @include media-breakpoint(screen-md) {
+               width: 50%;
+                
+            }
+            @include media-breakpoint(screen-lg) {
+                width: 40%;
+            }
+        }
+    }
+}
