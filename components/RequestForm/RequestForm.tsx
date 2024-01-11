@@ -25,7 +25,6 @@ export const RequestForm = () => {
       });
 
       if (res.ok) {
-        console.log("Request created");
         const createdRequest = await res.json();
         console.log(createdRequest);
         setName("");

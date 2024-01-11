@@ -6,6 +6,5 @@ export const saveToLS = (reviewsLS: ReviewLS[]) => {
 
 export const getLSReviews = (): ReviewLS[] => {
   const storedData = JSON.parse(localStorage.getItem("likedReviews") || "[]");
-  console.log("storedData", storedData);
   return storedData;
 };

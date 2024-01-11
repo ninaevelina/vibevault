@@ -10,7 +10,7 @@ interface AlbumCardProps {
 
 export default function AlbumCard({ album }: AlbumCardProps) {
   const baseURL = useBaseUrl();
-  console.log(baseURL);
+
   return (
     <article className="album">
       <div className="album__image">
