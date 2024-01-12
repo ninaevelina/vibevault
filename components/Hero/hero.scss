@@ -7,10 +7,10 @@
         height: 120px;
         pointer-events: none;
         @include media-breakpoint(screen-md) {
-            height: 160px;
+            height: 200px;
         }
         @include media-breakpoint(screen-lg) {
-            height: 200px;
+            height: 300px;
         }
 
         &--logo {
