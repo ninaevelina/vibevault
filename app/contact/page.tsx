@@ -29,7 +29,7 @@ export default function ContactPage() {
       <section className="grid-small container-small">
         <div className="grid-small__first-col">
           <div className="flex-container">
-            <h3>Contact details</h3>
+            <h3 className="grid-small__first-col--header">Contact details</h3>
             <ul className="contact-list">
               <li className="contact-list__item">
                 <b>Snail mail</b>
@@ -53,7 +53,7 @@ export default function ContactPage() {
         </div>
         <div className="grid-small__second-col">
           <div className="flex-container">
-            <h4>Request an album</h4>
+            <h4 className="grid-small__first-col--header">Request an album</h4>
             <p className="text-wrap-balance">
               Missing an album? Let us know. Enter your name, email and the name
               and artist of the album, and we&apos;ll handle your request within
