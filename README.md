@@ -81,4 +81,4 @@ npm run cypress:open
 
 ## Deployment on Vercel
 
-Check out the deployed project here: [VibeVault Deployment URL](https://vibevault-kappa.vercel.app/)
+Check out [VibeVault](https://vibevault-kappa.vercel.app/) on Vercel 💫
