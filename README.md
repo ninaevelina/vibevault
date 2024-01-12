@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VibeVault
 
-## Getting Started
+VibeVault - a fullstack review application for all music enthusiasts.
 
-First, run the development server:
+### Application Flow
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+VibeVault welcomes all music enthusiasts rate and review their favourite, and not so loved albums, without the need to sign up for an account.
+
+It’s a platform which will act as a springboard for musical discoveries and a place to find inspiration. Search and filter through the albums by your favorite genre, to find out what other people have to say about them.
+
+### Tech Stack
+
+![NextJS](https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748.svg?style=for-the-badge&logo=Prisma&logoColor=white)
+![Typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![Eslint](https://img.shields.io/badge/ESLint-4B32C3.svg?style=for-the-badge&logo=ESLint&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![Sass](https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white)
+![Cypress](https://img.shields.io/badge/Cypress-69D3A7.svg?style=for-the-badge&logo=Cypress&logoColor=white)
+![TSNode](https://img.shields.io/badge/tsnode-3178C6.svg?style=for-the-badge&logo=ts-node&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white)
+📩 SENDGRID
+
+## Installation
+
+### Clone Project
+
+```terminal
+git clone https://github.com/ninaevelina/vibevault.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Main Branch
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to branch main to see the deployed version of the project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```terminal
+git checkout main
+```
 
-## Learn More
+### Install Dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```terminal
+npm i
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Run Project 🚀
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```terminal
+npm run dev
+```
 
-## Deploy on Vercel
+## Cypress
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Cypress tests are done in a separate branch due to current limitations in regards to NextJS version 14. [(Read more)](https://nextjs.org/docs/app/building-your-application/testing/cypress)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Switch Branch
+
+From branch main:
+
+```terminal
+git checkout VV-65-Cypress
+```
+
+### Install Dependencies
+
+```terminal
+npm i
+```
+
+### Run Tests
+
+To run and view tests, run the following commands in separate terminals
+
+```terminal
+npm run dev
+```
+
+```terminal
+npm run cypress:open
+```
+
+## Deployment on Vercel
+
+Check out the deployed project here: [VibeVault Deployment URL](https://vibevault-kappa.vercel.app/)
