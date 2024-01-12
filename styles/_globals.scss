@@ -117,13 +117,19 @@ ul {
     grid-template-columns: 1fr;
     padding: 30px 0px;
     justify-items: center;
+    border-top: 1px solid $black;
     //width: calc(100% - 2rem);
     //margin: 0px auto;
 
     @include media-breakpoint(screen-md) {
         grid-template-columns: 1fr 1fr;
         padding: 40px 0px;
+        //border: none;
         
+    }
+
+    @include media-breakpoint(screen-lg) {
+        border: none;
     }
 
     &__first-col {
@@ -136,15 +142,29 @@ ul {
             width: auto;
             
         }
+
+        &--header {
+            text-transform: uppercase;
+        }
     }
 
     &__second-col {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        padding-top: 20px;
+        border-top: 1px solid $black;
         @include media-breakpoint(screen-md) {
             justify-content: end;
-            
+            border-top: none;
+        }
+        @include media-breakpoint(screen-lg) {
+            padding-top: 0;
+            border-top: none;
+        }
+
+        &--header {
+            text-transform: uppercase;
         }
     }
     
