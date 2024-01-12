@@ -37,6 +37,11 @@ Navigate to branch main to see the deployed version of the project
 git checkout main
 ```
 
+### Environment Variables
+
+Add `.env` for environment variables
+View `env.example` to get necessary environment variables 🔑
+
 ### Install Dependencies
 
 ```terminal
