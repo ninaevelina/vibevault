@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { Album } from "@prisma/client";
 import { useSearchParams } from "next/navigation";
-import { getAllAlbums } from "@/actions/albumActions";
-import AlbumCard from "../AlbumCard/AlbumCard";
 
 interface FilterProps {
   albums: Album[];

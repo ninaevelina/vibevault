@@ -35,7 +35,6 @@
 
     &__text-blocks {
         outline: 1px solid black;
-        //height: 200px;
         display: flex;
         flex-direction: column;
         padding: 12px 0px;
@@ -45,11 +44,8 @@
         justify-content: center;
 
         &--first, &--second, &--third {
-            //outline: 1px solid red;
             height: 30px;
             padding: 0px 16px 0px 16px;
-           // width: 75%;
-            //text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;

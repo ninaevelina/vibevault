@@ -1,5 +1,3 @@
-import checkoutImg from "../public/img-checkout.jpg";
-import imgBeyonce from "../public/bey.jpeg";
 export interface ColumnData {
   link: string;
   imageUrl: string;
@@ -14,7 +12,7 @@ export interface ColumnsProps {
 export const columnsData: ColumnData[] = [
   {
     link: "/albums",
-    imageUrl: checkoutImg.src,
+    imageUrl: "/",
     heading: "View all albums",
     text: "",
   },
@@ -26,13 +24,13 @@ export const columnsData: ColumnData[] = [
   },
   {
     link: "/contact",
-    imageUrl: checkoutImg.src,
+    imageUrl: "/",
     heading: "Get in touch! 🖤 ",
     text: "",
   },
   {
     link: "/contact",
-    imageUrl: imgBeyonce.src,
+    imageUrl: "/",
     heading: "Request an album",
     text: "",
   },
